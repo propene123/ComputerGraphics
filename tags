@@ -1,0 +1,465 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/30cd8e0/
+0	Chair Prac/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.activeTexture
+0	Chair Prac/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bindBuffer
+0	Chair Prac/lib/webgl-debug.js	/^  'bindFramebuffer': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bindFramebuffer
+0	Chair Prac/lib/webgl-debug.js	/^  'bindRenderbuffer': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bindRenderbuffer
+0	Chair Prac/lib/webgl-debug.js	/^  'bindTexture': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bindTexture
+0	Chair Prac/lib/webgl-debug.js	/^  'blendEquation': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendEquation
+0	Chair Prac/lib/webgl-debug.js	/^  'blendEquationSeparate': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendEquationSeparate
+0	Chair Prac/lib/webgl-debug.js	/^  'blendFunc': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFunc
+0	Chair Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFuncSeparate
+0	Chair Prac/lib/webgl-debug.js	/^  'bufferData': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bufferData
+0	Chair Prac/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bufferSubData
+0	Chair Prac/lib/webgl-debug.js	/^  'checkFramebufferStatus': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.checkFramebufferStatus
+0	Chair Prac/lib/webgl-debug.js	/^  'clear': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.clear
+0	Chair Prac/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.copyTexImage2D
+0	Chair Prac/lib/webgl-debug.js	/^  'copyTexSubImage2D': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.copyTexSubImage2D
+0	Chair Prac/lib/webgl-debug.js	/^  'createShader': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.createShader
+0	Chair Prac/lib/webgl-debug.js	/^  'cullFace': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.cullFace
+0	Chair Prac/lib/webgl-debug.js	/^  'depthFunc': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.depthFunc
+0	Chair Prac/lib/webgl-debug.js	/^  'disable': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.disable
+0	Chair Prac/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.drawArrays
+0	Chair Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.drawElements
+0	Chair Prac/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.enable
+0	Chair Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferRenderbuffer
+0	Chair Prac/lib/webgl-debug.js	/^  'framebufferTexture2D': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferTexture2D
+0	Chair Prac/lib/webgl-debug.js	/^  'frontFace': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.frontFace
+0	Chair Prac/lib/webgl-debug.js	/^  'generateMipmap': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.generateMipmap
+0	Chair Prac/lib/webgl-debug.js	/^  'getBufferParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getBufferParameter
+0	Chair Prac/lib/webgl-debug.js	/^  'getFramebufferAttachmentParameter': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getFramebufferAttachmentParameter
+0	Chair Prac/lib/webgl-debug.js	/^  'getParameter': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getParameter
+0	Chair Prac/lib/webgl-debug.js	/^  'getRenderbufferParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getRenderbufferParameter
+0	Chair Prac/lib/webgl-debug.js	/^  'getTexParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getTexParameter
+0	Chair Prac/lib/webgl-debug.js	/^  'pixelStorei': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.pixelStorei
+0	Chair Prac/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.renderbufferStorage
+0	Chair Prac/lib/webgl-debug.js	/^  'stencilFunc': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilFunc
+0	Chair Prac/lib/webgl-debug.js	/^  'stencilFuncSeparate': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilFuncSeparate
+0	Chair Prac/lib/webgl-debug.js	/^  'stencilMaskSeparate': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilMaskSeparate
+0	Chair Prac/lib/webgl-debug.js	/^  'stencilOp': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOp
+0	Chair Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOpSeparate
+0	Chair Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texImage2D
+0	Chair Prac/lib/webgl-debug.js	/^  'texParameterf': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameterf
+0	Chair Prac/lib/webgl-debug.js	/^  'texParameteri': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameteri
+0	Chair Prac/lib/webgl-debug.js	/^  'texSubImage2D': { 0:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texSubImage2D
+0	View Prac/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.activeTexture
+0	View Prac/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bindBuffer
+0	View Prac/lib/webgl-debug.js	/^  'bindFramebuffer': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bindFramebuffer
+0	View Prac/lib/webgl-debug.js	/^  'bindRenderbuffer': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bindRenderbuffer
+0	View Prac/lib/webgl-debug.js	/^  'bindTexture': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bindTexture
+0	View Prac/lib/webgl-debug.js	/^  'blendEquation': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendEquation
+0	View Prac/lib/webgl-debug.js	/^  'blendEquationSeparate': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendEquationSeparate
+0	View Prac/lib/webgl-debug.js	/^  'blendFunc': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFunc
+0	View Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFuncSeparate
+0	View Prac/lib/webgl-debug.js	/^  'bufferData': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bufferData
+0	View Prac/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bufferSubData
+0	View Prac/lib/webgl-debug.js	/^  'checkFramebufferStatus': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.checkFramebufferStatus
+0	View Prac/lib/webgl-debug.js	/^  'clear': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.clear
+0	View Prac/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.copyTexImage2D
+0	View Prac/lib/webgl-debug.js	/^  'copyTexSubImage2D': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.copyTexSubImage2D
+0	View Prac/lib/webgl-debug.js	/^  'createShader': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.createShader
+0	View Prac/lib/webgl-debug.js	/^  'cullFace': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.cullFace
+0	View Prac/lib/webgl-debug.js	/^  'depthFunc': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.depthFunc
+0	View Prac/lib/webgl-debug.js	/^  'disable': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.disable
+0	View Prac/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.drawArrays
+0	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.drawElements
+0	View Prac/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.enable
+0	View Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferRenderbuffer
+0	View Prac/lib/webgl-debug.js	/^  'framebufferTexture2D': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferTexture2D
+0	View Prac/lib/webgl-debug.js	/^  'frontFace': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.frontFace
+0	View Prac/lib/webgl-debug.js	/^  'generateMipmap': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.generateMipmap
+0	View Prac/lib/webgl-debug.js	/^  'getBufferParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getBufferParameter
+0	View Prac/lib/webgl-debug.js	/^  'getFramebufferAttachmentParameter': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getFramebufferAttachmentParameter
+0	View Prac/lib/webgl-debug.js	/^  'getParameter': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getParameter
+0	View Prac/lib/webgl-debug.js	/^  'getRenderbufferParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getRenderbufferParameter
+0	View Prac/lib/webgl-debug.js	/^  'getTexParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getTexParameter
+0	View Prac/lib/webgl-debug.js	/^  'pixelStorei': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.pixelStorei
+0	View Prac/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.renderbufferStorage
+0	View Prac/lib/webgl-debug.js	/^  'stencilFunc': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilFunc
+0	View Prac/lib/webgl-debug.js	/^  'stencilFuncSeparate': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilFuncSeparate
+0	View Prac/lib/webgl-debug.js	/^  'stencilMaskSeparate': { 0:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilMaskSeparate
+0	View Prac/lib/webgl-debug.js	/^  'stencilOp': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOp
+0	View Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOpSeparate
+0	View Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texImage2D
+0	View Prac/lib/webgl-debug.js	/^  'texParameterf': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameterf
+0	View Prac/lib/webgl-debug.js	/^  'texParameteri': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameteri
+0	View Prac/lib/webgl-debug.js	/^  'texSubImage2D': { 0:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texSubImage2D
+1	Chair Prac/lib/webgl-debug.js	/^  'blendEquationSeparate': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendEquationSeparate
+1	Chair Prac/lib/webgl-debug.js	/^  'blendFunc': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFunc
+1	Chair Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFuncSeparate
+1	Chair Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferRenderbuffer
+1	Chair Prac/lib/webgl-debug.js	/^  'framebufferTexture2D': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferTexture2D
+1	Chair Prac/lib/webgl-debug.js	/^  'getBufferParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getBufferParameter
+1	Chair Prac/lib/webgl-debug.js	/^  'getFramebufferAttachmentParameter': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getFramebufferAttachmentParameter
+1	Chair Prac/lib/webgl-debug.js	/^  'getProgramParameter': { 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getProgramParameter
+1	Chair Prac/lib/webgl-debug.js	/^  'getRenderbufferParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getRenderbufferParameter
+1	Chair Prac/lib/webgl-debug.js	/^  'getShaderParameter': { 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getShaderParameter
+1	Chair Prac/lib/webgl-debug.js	/^  'getTexParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getTexParameter
+1	Chair Prac/lib/webgl-debug.js	/^  'getVertexAttrib': { 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getVertexAttrib
+1	Chair Prac/lib/webgl-debug.js	/^  'pixelStorei': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.pixelStorei
+1	Chair Prac/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.renderbufferStorage
+1	Chair Prac/lib/webgl-debug.js	/^  'stencilFuncSeparate': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilFuncSeparate
+1	Chair Prac/lib/webgl-debug.js	/^  'stencilOp': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOp
+1	Chair Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOpSeparate
+1	Chair Prac/lib/webgl-debug.js	/^  'texParameterf': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameterf
+1	Chair Prac/lib/webgl-debug.js	/^  'texParameteri': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameteri
+1	View Prac/lib/webgl-debug.js	/^  'blendEquationSeparate': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendEquationSeparate
+1	View Prac/lib/webgl-debug.js	/^  'blendFunc': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFunc
+1	View Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFuncSeparate
+1	View Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferRenderbuffer
+1	View Prac/lib/webgl-debug.js	/^  'framebufferTexture2D': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferTexture2D
+1	View Prac/lib/webgl-debug.js	/^  'getBufferParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getBufferParameter
+1	View Prac/lib/webgl-debug.js	/^  'getFramebufferAttachmentParameter': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getFramebufferAttachmentParameter
+1	View Prac/lib/webgl-debug.js	/^  'getProgramParameter': { 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getProgramParameter
+1	View Prac/lib/webgl-debug.js	/^  'getRenderbufferParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getRenderbufferParameter
+1	View Prac/lib/webgl-debug.js	/^  'getShaderParameter': { 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getShaderParameter
+1	View Prac/lib/webgl-debug.js	/^  'getTexParameter': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getTexParameter
+1	View Prac/lib/webgl-debug.js	/^  'getVertexAttrib': { 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getVertexAttrib
+1	View Prac/lib/webgl-debug.js	/^  'pixelStorei': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.pixelStorei
+1	View Prac/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.renderbufferStorage
+1	View Prac/lib/webgl-debug.js	/^  'stencilFuncSeparate': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilFuncSeparate
+1	View Prac/lib/webgl-debug.js	/^  'stencilOp': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOp
+1	View Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOpSeparate
+1	View Prac/lib/webgl-debug.js	/^  'texParameterf': { 0:true, 1:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameterf
+1	View Prac/lib/webgl-debug.js	/^  'texParameteri': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameteri
+2	Chair Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFuncSeparate
+2	Chair Prac/lib/webgl-debug.js	/^  'bufferData': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bufferData
+2	Chair Prac/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.copyTexImage2D
+2	Chair Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.drawElements
+2	Chair Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferRenderbuffer
+2	Chair Prac/lib/webgl-debug.js	/^  'framebufferTexture2D': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferTexture2D
+2	Chair Prac/lib/webgl-debug.js	/^  'getFramebufferAttachmentParameter': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getFramebufferAttachmentParameter
+2	Chair Prac/lib/webgl-debug.js	/^  'stencilOp': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOp
+2	Chair Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOpSeparate
+2	Chair Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texImage2D
+2	Chair Prac/lib/webgl-debug.js	/^  'texParameteri': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameteri
+2	Chair Prac/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.vertexAttribPointer
+2	View Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFuncSeparate
+2	View Prac/lib/webgl-debug.js	/^  'bufferData': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.bufferData
+2	View Prac/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.copyTexImage2D
+2	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.drawElements
+2	View Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferRenderbuffer
+2	View Prac/lib/webgl-debug.js	/^  'framebufferTexture2D': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.framebufferTexture2D
+2	View Prac/lib/webgl-debug.js	/^  'getFramebufferAttachmentParameter': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.getFramebufferAttachmentParameter
+2	View Prac/lib/webgl-debug.js	/^  'stencilOp': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOp
+2	View Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOpSeparate
+2	View Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texImage2D
+2	View Prac/lib/webgl-debug.js	/^  'texParameteri': { 0:true, 1:true, 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texParameteri
+2	View Prac/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.vertexAttribPointer
+3	Chair Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFuncSeparate
+3	Chair Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOpSeparate
+3	View Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.blendFuncSeparate
+3	View Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.stencilOpSeparate
+4	Chair Prac/lib/webgl-debug.js	/^  'readPixels': { 4:true, 5:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.readPixels
+4	View Prac/lib/webgl-debug.js	/^  'readPixels': { 4:true, 5:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.readPixels
+5	Chair Prac/lib/webgl-debug.js	/^  'readPixels': { 4:true, 5:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.readPixels
+5	View Prac/lib/webgl-debug.js	/^  'readPixels': { 4:true, 5:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.readPixels
+6	Chair Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texImage2D
+6	Chair Prac/lib/webgl-debug.js	/^  'texSubImage2D': { 0:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texSubImage2D
+6	View Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texImage2D
+6	View Prac/lib/webgl-debug.js	/^  'texSubImage2D': { 0:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texSubImage2D
+7	Chair Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texImage2D
+7	Chair Prac/lib/webgl-debug.js	/^  'texSubImage2D': { 0:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texSubImage2D
+7	View Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texImage2D
+7	View Prac/lib/webgl-debug.js	/^  'texSubImage2D': { 0:true, 6:true, 7:true },$/;"	p	class:WebGLDebugUtils.glValidEnumContexts.texSubImage2D
+ANGLE_STEP	Chair Prac/p3/chair.js	/^var ANGLE_STEP = 3.0;  \/\/ The increments of rotation angle (degrees)$/;"	v
+AnonymousFunction285bd8d50100	View Prac/lib/webgl-utils.js	/^    canvas.addEventListener("webglcontextcreationerror", function(event) {$/;"	f
+AnonymousFunction4090b4810100	Chair Prac/lib/webgl-utils.js	/^    canvas.addEventListener("webglcontextcreationerror", function(event) {$/;"	f
+AnonymousFunctione59b522b0100	View Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:WebGLDebugUtils.makeDebugContext.makeErrorWrapper
+AnonymousFunctione59b522b0200	View Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.makeLostContextWrapper
+AnonymousFunctione59b522b0300	View Prac/lib/webgl-debug.js	/^      setTimeout(function() {$/;"	f	function:wrapper_.loseContext
+AnonymousFunctione59b522b0400	View Prac/lib/webgl-debug.js	/^        setTimeout(function() {$/;"	f	function:wrapper_.restoreContext
+AnonymousFunctione59b522b0500	View Prac/lib/webgl-debug.js	/^      return function() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.wrapper_
+AnonymousFunctione59b522b0600	View Prac/lib/webgl-debug.js	/^      return function() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.wrapper_
+AnonymousFunctione59b522b0700	View Prac/lib/webgl-debug.js	/^      return function() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.wrapper_
+AnonymousFunctione59b522b0800	View Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:wrapper_.checkFramebufferStatus
+AnonymousFunctione59b522b0900	View Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:wrapper_.getAttribLocation
+AnonymousFunctione59b522b0a00	View Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:wrapper_.getVertexAttribOffset
+AnonymousFunctione59b522b0b00	View Prac/lib/webgl-debug.js	/^      return function(info) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.wrapEvent
+AnonymousFunctionfdd02dd70100	Chair Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:WebGLDebugUtils.makeDebugContext.makeErrorWrapper
+AnonymousFunctionfdd02dd70200	Chair Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.makeLostContextWrapper
+AnonymousFunctionfdd02dd70300	Chair Prac/lib/webgl-debug.js	/^      setTimeout(function() {$/;"	f	function:wrapper_.loseContext
+AnonymousFunctionfdd02dd70400	Chair Prac/lib/webgl-debug.js	/^        setTimeout(function() {$/;"	f	function:wrapper_.restoreContext
+AnonymousFunctionfdd02dd70500	Chair Prac/lib/webgl-debug.js	/^      return function() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.wrapper_
+AnonymousFunctionfdd02dd70600	Chair Prac/lib/webgl-debug.js	/^      return function() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.wrapper_
+AnonymousFunctionfdd02dd70700	Chair Prac/lib/webgl-debug.js	/^      return function() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.wrapper_
+AnonymousFunctionfdd02dd70800	Chair Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:wrapper_.checkFramebufferStatus
+AnonymousFunctionfdd02dd70900	Chair Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:wrapper_.getAttribLocation
+AnonymousFunctionfdd02dd70a00	Chair Prac/lib/webgl-debug.js	/^    return function() {$/;"	f	function:wrapper_.getVertexAttribOffset
+AnonymousFunctionfdd02dd70b00	Chair Prac/lib/webgl-debug.js	/^      return function(info) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext.wrapEvent
+ComputerGraphics	README.md	/^# ComputerGraphics/;"	c
+FSHADER_SOURCE	Chair Prac/p3/chair.js	/^var FSHADER_SOURCE =$/;"	v
+FSHADER_SOURCE	View Prac/p2/PerspectiveView.js	/^var FSHADER_SOURCE =$/;"	v
+FSHADER_SOURCE	View Prac/p2/PerspectiveView_mvp.js	/^var FSHADER_SOURCE =$/;"	v
+Matrix4	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setIdentity = function() {$/;"	c
+Matrix4	Chair Prac/lib/cuon-matrix.js	/^var Matrix4 = function(opt_src) {$/;"	f
+Matrix4	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setIdentity = function() {$/;"	c
+Matrix4	View Prac/lib/cuon-matrix.js	/^var Matrix4 = function(opt_src) {$/;"	f
+VSHADER_SOURCE	Chair Prac/p3/chair.js	/^var VSHADER_SOURCE =$/;"	v
+VSHADER_SOURCE	View Prac/p2/PerspectiveView.js	/^var VSHADER_SOURCE =$/;"	v
+VSHADER_SOURCE	View Prac/p2/PerspectiveView_mvp.js	/^var VSHADER_SOURCE =$/;"	v
+Vector3	Chair Prac/lib/cuon-matrix.js	/^var Vector3 = function(opt_src) {$/;"	c
+Vector3	View Prac/lib/cuon-matrix.js	/^var Vector3 = function(opt_src) {$/;"	c
+Vector4	Chair Prac/lib/cuon-matrix.js	/^var Vector4 = function(opt_src) {$/;"	c
+Vector4	View Prac/lib/cuon-matrix.js	/^var Vector4 = function(opt_src) {$/;"	c
+WebGLDebugUtils	Chair Prac/lib/webgl-debug.js	/^WebGLDebugUtils = function() {$/;"	f
+WebGLDebugUtils	View Prac/lib/webgl-debug.js	/^WebGLDebugUtils = function() {$/;"	f
+WebGLUtils	Chair Prac/lib/webgl-utils.js	/^WebGLUtils = function() {$/;"	f
+WebGLUtils	View Prac/lib/webgl-utils.js	/^WebGLUtils = function() {$/;"	f
+activeTexture	Chair Prac/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+activeTexture	View Prac/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bindBuffer	Chair Prac/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bindBuffer	View Prac/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bindFramebuffer	Chair Prac/lib/webgl-debug.js	/^  'bindFramebuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bindFramebuffer	View Prac/lib/webgl-debug.js	/^  'bindFramebuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bindRenderbuffer	Chair Prac/lib/webgl-debug.js	/^  'bindRenderbuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bindRenderbuffer	View Prac/lib/webgl-debug.js	/^  'bindRenderbuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bindTexture	Chair Prac/lib/webgl-debug.js	/^  'bindTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bindTexture	View Prac/lib/webgl-debug.js	/^  'bindTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+blendEquation	Chair Prac/lib/webgl-debug.js	/^  'blendEquation': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+blendEquation	View Prac/lib/webgl-debug.js	/^  'blendEquation': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+blendEquationSeparate	Chair Prac/lib/webgl-debug.js	/^  'blendEquationSeparate': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+blendEquationSeparate	View Prac/lib/webgl-debug.js	/^  'blendEquationSeparate': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+blendFunc	Chair Prac/lib/webgl-debug.js	/^  'blendFunc': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+blendFunc	View Prac/lib/webgl-debug.js	/^  'blendFunc': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+blendFuncSeparate	Chair Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+blendFuncSeparate	View Prac/lib/webgl-debug.js	/^  'blendFuncSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bufferData	Chair Prac/lib/webgl-debug.js	/^  'bufferData': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bufferData	View Prac/lib/webgl-debug.js	/^  'bufferData': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bufferSubData	Chair Prac/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+bufferSubData	View Prac/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+checkFramebufferStatus	Chair Prac/lib/webgl-debug.js	/^  'checkFramebufferStatus': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+checkFramebufferStatus	Chair Prac/lib/webgl-debug.js	/^  wrapper_.checkFramebufferStatus = function(f) {$/;"	f	function:wrapper_
+checkFramebufferStatus	View Prac/lib/webgl-debug.js	/^  'checkFramebufferStatus': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+checkFramebufferStatus	View Prac/lib/webgl-debug.js	/^  wrapper_.checkFramebufferStatus = function(f) {$/;"	f	function:wrapper_
+checkInit	Chair Prac/lib/webgl-debug.js	/^function checkInit() {$/;"	f	function:WebGLDebugUtils
+checkInit	View Prac/lib/webgl-debug.js	/^function checkInit() {$/;"	f	function:WebGLDebugUtils
+checkResources	Chair Prac/lib/webgl-debug.js	/^  function checkResources(args) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+checkResources	View Prac/lib/webgl-debug.js	/^  function checkResources(args) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+clear	Chair Prac/lib/webgl-debug.js	/^  'clear': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+clear	View Prac/lib/webgl-debug.js	/^  'clear': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+clearErrors	Chair Prac/lib/webgl-debug.js	/^  function clearErrors() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+clearErrors	View Prac/lib/webgl-debug.js	/^  function clearErrors() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+concat	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.concat = function(other) {$/;"	m	class:Matrix4
+concat	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.concat = function(other) {$/;"	m	class:Matrix4
+copyTexImage2D	Chair Prac/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+copyTexImage2D	View Prac/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+copyTexSubImage2D	Chair Prac/lib/webgl-debug.js	/^  'copyTexSubImage2D': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+copyTexSubImage2D	View Prac/lib/webgl-debug.js	/^  'copyTexSubImage2D': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+create3DContext	Chair Prac/lib/webgl-utils.js	/^var create3DContext = function(canvas, opt_attribs) {$/;"	f	function:WebGLUtils
+create3DContext	View Prac/lib/webgl-utils.js	/^var create3DContext = function(canvas, opt_attribs) {$/;"	f	function:WebGLUtils
+createProgram	Chair Prac/lib/cuon-utils.js	/^function createProgram(gl, vshader, fshader) {$/;"	f
+createProgram	View Prac/lib/cuon-utils.js	/^function createProgram(gl, vshader, fshader) {$/;"	f
+createShader	Chair Prac/lib/webgl-debug.js	/^  'createShader': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+createShader	View Prac/lib/webgl-debug.js	/^  'createShader': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+cullFace	Chair Prac/lib/webgl-debug.js	/^  'cullFace': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+cullFace	View Prac/lib/webgl-debug.js	/^  'cullFace': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+depthFunc	Chair Prac/lib/webgl-debug.js	/^  'depthFunc': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+depthFunc	View Prac/lib/webgl-debug.js	/^  'depthFunc': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+disable	Chair Prac/lib/webgl-debug.js	/^  'disable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+disable	View Prac/lib/webgl-debug.js	/^  'disable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+draw	Chair Prac/p3/chair.js	/^function draw(gl, u_ModelMatrix, u_NormalMatrix, u_isLighting) {$/;"	f
+drawArrays	Chair Prac/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+drawArrays	View Prac/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+drawElements	Chair Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+drawElements	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+drawbox	Chair Prac/p3/chair.js	/^function drawbox(gl, u_ModelMatrix, u_NormalMatrix, n) {$/;"	f
+dropShadow	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
+dropShadow	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
+dropShadowDirectionally	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadowDirectionally = function(normX, normY, normZ, planeX, planeY, planeZ/;"	m	class:Matrix4
+dropShadowDirectionally	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadowDirectionally = function(normX, normY, normZ, planeX, planeY, planeZ/;"	m	class:Matrix4
+enable	Chair Prac/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+enable	View Prac/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+framebufferRenderbuffer	Chair Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+framebufferRenderbuffer	View Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+framebufferTexture2D	Chair Prac/lib/webgl-debug.js	/^  'framebufferTexture2D': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+framebufferTexture2D	View Prac/lib/webgl-debug.js	/^  'framebufferTexture2D': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+freeResources	Chair Prac/lib/webgl-debug.js	/^  function freeResources() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+freeResources	View Prac/lib/webgl-debug.js	/^  function freeResources() {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+frontFace	Chair Prac/lib/webgl-debug.js	/^  'frontFace': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+frontFace	View Prac/lib/webgl-debug.js	/^  'frontFace': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+frustum	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.frustum = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
+frustum	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.frustum = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
+g_matrixStack	Chair Prac/p3/chair.js	/^var g_matrixStack = []; \/\/ Array for storing a matrix$/;"	v
+g_normalMatrix	Chair Prac/p3/chair.js	/^var g_normalMatrix = new Matrix4();  \/\/ Coordinate transformation matrix for normals$/;"	v
+g_xAngle	Chair Prac/p3/chair.js	/^var g_xAngle = 0.0;    \/\/ The rotation x angle (degrees)$/;"	v
+g_yAngle	Chair Prac/p3/chair.js	/^var g_yAngle = 0.0;    \/\/ The rotation y angle (degrees)$/;"	v
+generateMipmap	Chair Prac/lib/webgl-debug.js	/^  'generateMipmap': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+generateMipmap	View Prac/lib/webgl-debug.js	/^  'generateMipmap': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getAttribLocation	Chair Prac/lib/webgl-debug.js	/^  wrapper_.getAttribLocation = function(f) {$/;"	f	function:wrapper_
+getAttribLocation	View Prac/lib/webgl-debug.js	/^  wrapper_.getAttribLocation = function(f) {$/;"	f	function:wrapper_
+getBufferParameter	Chair Prac/lib/webgl-debug.js	/^  'getBufferParameter': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getBufferParameter	View Prac/lib/webgl-debug.js	/^  'getBufferParameter': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getError	Chair Prac/lib/webgl-debug.js	/^  wrapper.getError = function() {$/;"	f	function:wrapper
+getError	Chair Prac/lib/webgl-debug.js	/^  wrapper_.getError = function() {$/;"	f	function:wrapper_
+getError	View Prac/lib/webgl-debug.js	/^  wrapper.getError = function() {$/;"	f	function:wrapper
+getError	View Prac/lib/webgl-debug.js	/^  wrapper_.getError = function() {$/;"	f	function:wrapper_
+getFramebufferAttachmentParameter	Chair Prac/lib/webgl-debug.js	/^  'getFramebufferAttachmentParameter': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getFramebufferAttachmentParameter	View Prac/lib/webgl-debug.js	/^  'getFramebufferAttachmentParameter': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getParameter	Chair Prac/lib/webgl-debug.js	/^  'getParameter': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getParameter	View Prac/lib/webgl-debug.js	/^  'getParameter': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getProgramParameter	Chair Prac/lib/webgl-debug.js	/^  'getProgramParameter': { 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getProgramParameter	View Prac/lib/webgl-debug.js	/^  'getProgramParameter': { 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getRenderbufferParameter	Chair Prac/lib/webgl-debug.js	/^  'getRenderbufferParameter': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getRenderbufferParameter	View Prac/lib/webgl-debug.js	/^  'getRenderbufferParameter': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getShader	Chair Prac/lib/initShaders.js	/^        function getShader(gl, shaderName, type) {$/;"	f	function:initShadersFile
+getShader	View Prac/lib/initShaders.js	/^        function getShader(gl, shaderName, type) {$/;"	f	function:initShadersFile
+getShaderParameter	Chair Prac/lib/webgl-debug.js	/^  'getShaderParameter': { 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getShaderParameter	View Prac/lib/webgl-debug.js	/^  'getShaderParameter': { 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getTexParameter	Chair Prac/lib/webgl-debug.js	/^  'getTexParameter': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getTexParameter	View Prac/lib/webgl-debug.js	/^  'getTexParameter': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getVertexAttrib	Chair Prac/lib/webgl-debug.js	/^  'getVertexAttrib': { 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getVertexAttrib	View Prac/lib/webgl-debug.js	/^  'getVertexAttrib': { 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+getVertexAttribOffset	Chair Prac/lib/webgl-debug.js	/^  wrapper_.getVertexAttribOffset = function(f) {$/;"	f	function:wrapper_
+getVertexAttribOffset	View Prac/lib/webgl-debug.js	/^  wrapper_.getVertexAttribOffset = function(f) {$/;"	f	function:wrapper_
+getWebGLContext	Chair Prac/lib/cuon-utils.js	/^function getWebGLContext(canvas, opt_debug) {$/;"	f
+getWebGLContext	View Prac/lib/cuon-utils.js	/^function getWebGLContext(canvas, opt_debug) {$/;"	f
+glEnumToString	Chair Prac/lib/webgl-debug.js	/^function glEnumToString(value) {$/;"	f	function:WebGLDebugUtils
+glEnumToString	View Prac/lib/webgl-debug.js	/^function glEnumToString(value) {$/;"	f	function:WebGLDebugUtils
+glFunctionArgToString	Chair Prac/lib/webgl-debug.js	/^function glFunctionArgToString(functionName, argumentIndex, value) {$/;"	f	function:WebGLDebugUtils
+glFunctionArgToString	View Prac/lib/webgl-debug.js	/^function glFunctionArgToString(functionName, argumentIndex, value) {$/;"	f	function:WebGLDebugUtils
+glValidEnumContexts	Chair Prac/lib/webgl-debug.js	/^var glValidEnumContexts = {$/;"	c	class:WebGLDebugUtils
+glValidEnumContexts	View Prac/lib/webgl-debug.js	/^var glValidEnumContexts = {$/;"	c	class:WebGLDebugUtils
+handleCreationError	Chair Prac/lib/webgl-utils.js	/^  function handleCreationError(msg) {$/;"	f	function:WebGLUtils.setupWebGL
+handleCreationError	View Prac/lib/webgl-utils.js	/^  function handleCreationError(msg) {$/;"	f	function:WebGLUtils.setupWebGL
+init	Chair Prac/lib/webgl-debug.js	/^function init(ctx) {$/;"	f	function:WebGLDebugUtils
+init	View Prac/lib/webgl-debug.js	/^function init(ctx) {$/;"	f	function:WebGLDebugUtils
+initArrayBuffer	Chair Prac/p3/chair.js	/^function initArrayBuffer (gl, attribute, data, num, type) {$/;"	f
+initAxesVertexBuffers	Chair Prac/p3/chair.js	/^function initAxesVertexBuffers(gl) {$/;"	f
+initShaders	Chair Prac/lib/cuon-utils.js	/^function initShaders(gl, vshader, fshader) {$/;"	f
+initShaders	View Prac/lib/cuon-utils.js	/^function initShaders(gl, vshader, fshader) {$/;"	f
+initShadersFile	Chair Prac/lib/initShaders.js	/^    function initShadersFile(gl, vShaderName, fShaderName) {$/;"	f
+initShadersFile	View Prac/lib/initShaders.js	/^    function initShadersFile(gl, vShaderName, fShaderName) {$/;"	f
+initVertexBuffers	Chair Prac/p3/chair.js	/^function initVertexBuffers(gl) {$/;"	f
+initVertexBuffers	View Prac/p2/PerspectiveView.js	/^function initVertexBuffers(gl) {$/;"	f
+initVertexBuffers	View Prac/p2/PerspectiveView_mvp.js	/^function initVertexBuffers(gl) {$/;"	f
+invert	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.invert = function() {$/;"	m	class:Matrix4
+invert	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.invert = function() {$/;"	m	class:Matrix4
+isContextLost	Chair Prac/lib/webgl-debug.js	/^  wrapper_.isContextLost = function() {$/;"	f	function:wrapper_
+isContextLost	View Prac/lib/webgl-debug.js	/^  wrapper_.isContextLost = function() {$/;"	f	function:wrapper_
+isWebGLObject	Chair Prac/lib/webgl-debug.js	/^  function isWebGLObject(obj) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+isWebGLObject	View Prac/lib/webgl-debug.js	/^  function isWebGLObject(obj) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+keydown	Chair Prac/p3/chair.js	/^function keydown(ev, gl, u_ModelMatrix, u_NormalMatrix, u_isLighting) {$/;"	f
+loadFileAJAX	Chair Prac/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
+loadFileAJAX	View Prac/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
+loadShader	Chair Prac/lib/cuon-utils.js	/^function loadShader(gl, type, source) {$/;"	f
+loadShader	View Prac/lib/cuon-utils.js	/^function loadShader(gl, type, source) {$/;"	f
+log	Chair Prac/lib/webgl-debug.js	/^var log = function(msg) {$/;"	f	function:WebGLDebugUtils
+log	View Prac/lib/webgl-debug.js	/^var log = function(msg) {$/;"	f	function:WebGLDebugUtils
+lookAt	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.lookAt = function(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ) /;"	m	class:Matrix4
+lookAt	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.lookAt = function(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ) /;"	m	class:Matrix4
+loseContext	Chair Prac/lib/webgl-debug.js	/^  wrapper_.loseContext = function() {$/;"	f	function:wrapper_
+loseContext	View Prac/lib/webgl-debug.js	/^  wrapper_.loseContext = function() {$/;"	f	function:wrapper_
+main	Chair Prac/p3/chair.js	/^function main() {$/;"	f
+main	View Prac/p2/PerspectiveView.js	/^function main() {$/;"	f
+main	View Prac/p2/PerspectiveView_mvp.js	/^function main() {$/;"	f
+makeDebugContext	Chair Prac/lib/webgl-debug.js	/^function makeDebugContext(ctx, opt_onErrorFunc) {$/;"	f	function:WebGLDebugUtils
+makeDebugContext	View Prac/lib/webgl-debug.js	/^function makeDebugContext(ctx, opt_onErrorFunc) {$/;"	f	function:WebGLDebugUtils
+makeErrorWrapper	Chair Prac/lib/webgl-debug.js	/^  function makeErrorWrapper(ctx, functionName) {$/;"	f	function:WebGLDebugUtils.makeDebugContext
+makeErrorWrapper	View Prac/lib/webgl-debug.js	/^  function makeErrorWrapper(ctx, functionName) {$/;"	f	function:WebGLDebugUtils.makeDebugContext
+makeFailHTML	Chair Prac/lib/webgl-utils.js	/^var makeFailHTML = function(msg) {$/;"	f	function:WebGLUtils
+makeFailHTML	View Prac/lib/webgl-utils.js	/^var makeFailHTML = function(msg) {$/;"	f	function:WebGLUtils
+makeLostContextSimulatingContext	Chair Prac/lib/webgl-debug.js	/^function makeLostContextSimulatingContext(ctx) {$/;"	f	function:WebGLDebugUtils
+makeLostContextSimulatingContext	View Prac/lib/webgl-debug.js	/^function makeLostContextSimulatingContext(ctx) {$/;"	f	function:WebGLDebugUtils
+makeLostContextWrapper	Chair Prac/lib/webgl-debug.js	/^  function makeLostContextWrapper(ctx, functionName) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+makeLostContextWrapper	View Prac/lib/webgl-debug.js	/^  function makeLostContextWrapper(ctx, functionName) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+makeWebGLContextEvent	Chair Prac/lib/webgl-debug.js	/^  function makeWebGLContextEvent(statusMessage) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+makeWebGLContextEvent	View Prac/lib/webgl-debug.js	/^  function makeWebGLContextEvent(statusMessage) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+mightBeEnum	Chair Prac/lib/webgl-debug.js	/^function mightBeEnum(value) {$/;"	f	function:WebGLDebugUtils
+mightBeEnum	View Prac/lib/webgl-debug.js	/^function mightBeEnum(value) {$/;"	f	function:WebGLDebugUtils
+modelMatrix	Chair Prac/p3/chair.js	/^var modelMatrix = new Matrix4(); \/\/ The model matrix$/;"	v
+multiply	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.multiply = Matrix4.prototype.concat;$/;"	m	class:Matrix4
+multiply	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.multiply = Matrix4.prototype.concat;$/;"	m	class:Matrix4
+multiplyVector3	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.multiplyVector3 = function(pos) {$/;"	m	class:Matrix4
+multiplyVector3	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.multiplyVector3 = function(pos) {$/;"	m	class:Matrix4
+multiplyVector4	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.multiplyVector4 = function(pos) {$/;"	m	class:Matrix4
+multiplyVector4	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.multiplyVector4 = function(pos) {$/;"	m	class:Matrix4
+normalize	Chair Prac/lib/cuon-matrix.js	/^Vector3.prototype.normalize = function() {$/;"	m	class:Vector3
+normalize	View Prac/lib/cuon-matrix.js	/^Vector3.prototype.normalize = function() {$/;"	m	class:Vector3
+onkeydown	Chair Prac/p3/chair.js	/^  document.onkeydown = function(ev){$/;"	f	function:document
+ortho	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.ortho = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
+ortho	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.ortho = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
+perspective	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.perspective = function(fovy, aspect, near, far) {$/;"	m	class:Matrix4
+perspective	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.perspective = function(fovy, aspect, near, far) {$/;"	m	class:Matrix4
+pixelStorei	Chair Prac/lib/webgl-debug.js	/^  'pixelStorei': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+pixelStorei	View Prac/lib/webgl-debug.js	/^  'pixelStorei': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+popMatrix	Chair Prac/p3/chair.js	/^function popMatrix() { \/\/ Retrieve the matrix from the array$/;"	f
+projMatrix	Chair Prac/p3/chair.js	/^var projMatrix = new Matrix4();  \/\/ The projection matrix$/;"	v
+pushMatrix	Chair Prac/p3/chair.js	/^function pushMatrix(m) { \/\/ Store the specified matrix to the array$/;"	f
+readPixels	Chair Prac/lib/webgl-debug.js	/^  'readPixels': { 4:true, 5:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+readPixels	View Prac/lib/webgl-debug.js	/^  'readPixels': { 4:true, 5:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+registerOnContextLostListener	Chair Prac/lib/webgl-debug.js	/^  wrapper_.registerOnContextLostListener = function(listener) {$/;"	f	function:wrapper_
+registerOnContextLostListener	View Prac/lib/webgl-debug.js	/^  wrapper_.registerOnContextLostListener = function(listener) {$/;"	f	function:wrapper_
+registerOnContextRestoredListener	Chair Prac/lib/webgl-debug.js	/^  wrapper_.registerOnContextRestoredListener = function(listener) {$/;"	f	function:wrapper_
+registerOnContextRestoredListener	View Prac/lib/webgl-debug.js	/^  wrapper_.registerOnContextRestoredListener = function(listener) {$/;"	f	function:wrapper_
+renderbufferStorage	Chair Prac/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+renderbufferStorage	View Prac/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+requestAnimationFrame	Chair Prac/lib/webgl-utils.js	/^  window.requestAnimationFrame = (function() {$/;"	f	function:window
+requestAnimationFrame	View Prac/lib/webgl-utils.js	/^  window.requestAnimationFrame = (function() {$/;"	f	function:window
+resetToInitialState	Chair Prac/lib/webgl-debug.js	/^function resetToInitialState(ctx) {$/;"	f	function:WebGLDebugUtils
+resetToInitialState	View Prac/lib/webgl-debug.js	/^function resetToInitialState(ctx) {$/;"	f	function:WebGLDebugUtils
+restoreContext	Chair Prac/lib/webgl-debug.js	/^  wrapper_.restoreContext = function() {$/;"	f	function:wrapper_
+restoreContext	View Prac/lib/webgl-debug.js	/^  wrapper_.restoreContext = function() {$/;"	f	function:wrapper_
+rotate	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.rotate = function(angle, x, y, z) {$/;"	m	class:Matrix4
+rotate	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.rotate = function(angle, x, y, z) {$/;"	m	class:Matrix4
+scale	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.scale = function(x, y, z) {$/;"	m	class:Matrix4
+scale	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.scale = function(x, y, z) {$/;"	m	class:Matrix4
+setFrustum	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setFrustum = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
+setFrustum	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setFrustum = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
+setIdentity	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setIdentity = function() {$/;"	m	class:Matrix4
+setIdentity	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setIdentity = function() {$/;"	m	class:Matrix4
+setInverseOf	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setInverseOf = function(other) {$/;"	m	class:Matrix4
+setInverseOf	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setInverseOf = function(other) {$/;"	m	class:Matrix4
+setLookAt	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setLookAt = function(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, up/;"	m	class:Matrix4
+setLookAt	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setLookAt = function(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, up/;"	m	class:Matrix4
+setOrtho	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setOrtho = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
+setOrtho	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setOrtho = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
+setPerspective	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setPerspective = function(fovy, aspect, near, far) {$/;"	m	class:Matrix4
+setPerspective	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setPerspective = function(fovy, aspect, near, far) {$/;"	m	class:Matrix4
+setRotate	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setRotate = function(angle, x, y, z) {$/;"	m	class:Matrix4
+setRotate	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setRotate = function(angle, x, y, z) {$/;"	m	class:Matrix4
+setScale	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setScale = function(x, y, z) {$/;"	m	class:Matrix4
+setScale	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setScale = function(x, y, z) {$/;"	m	class:Matrix4
+setTranslate	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setTranslate = function(x, y, z) {$/;"	m	class:Matrix4
+setTranslate	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setTranslate = function(x, y, z) {$/;"	m	class:Matrix4
+setupWebGL	Chair Prac/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_attribs, opt_onError) {$/;"	f	function:WebGLUtils
+setupWebGL	View Prac/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_attribs, opt_onError) {$/;"	f	function:WebGLUtils
+stencilFunc	Chair Prac/lib/webgl-debug.js	/^  'stencilFunc': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilFunc	View Prac/lib/webgl-debug.js	/^  'stencilFunc': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilFuncSeparate	Chair Prac/lib/webgl-debug.js	/^  'stencilFuncSeparate': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilFuncSeparate	View Prac/lib/webgl-debug.js	/^  'stencilFuncSeparate': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilMaskSeparate	Chair Prac/lib/webgl-debug.js	/^  'stencilMaskSeparate': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilMaskSeparate	View Prac/lib/webgl-debug.js	/^  'stencilMaskSeparate': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilOp	Chair Prac/lib/webgl-debug.js	/^  'stencilOp': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilOp	View Prac/lib/webgl-debug.js	/^  'stencilOp': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilOpSeparate	Chair Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+stencilOpSeparate	View Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+texImage2D	Chair Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+texImage2D	View Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+texParameterf	Chair Prac/lib/webgl-debug.js	/^  'texParameterf': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+texParameterf	View Prac/lib/webgl-debug.js	/^  'texParameterf': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+texParameteri	Chair Prac/lib/webgl-debug.js	/^  'texParameteri': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+texParameteri	View Prac/lib/webgl-debug.js	/^  'texParameteri': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+texSubImage2D	Chair Prac/lib/webgl-debug.js	/^  'texSubImage2D': { 0:true, 6:true, 7:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+texSubImage2D	View Prac/lib/webgl-debug.js	/^  'texSubImage2D': { 0:true, 6:true, 7:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+translate	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.translate = function(x, y, z) {$/;"	m	class:Matrix4
+translate	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.translate = function(x, y, z) {$/;"	m	class:Matrix4
+transpose	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {$/;"	m	class:Matrix4
+transpose	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {$/;"	m	class:Matrix4
+vertexAttribPointer	Chair Prac/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+vertexAttribPointer	View Prac/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+viewMatrix	Chair Prac/p3/chair.js	/^var viewMatrix = new Matrix4();  \/\/ The view matrix$/;"	v
+webgl	Chair Prac/p3/chair.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
+webgl	View Prac/p2/PerspectiveView.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
+webgl	View Prac/p2/PerspectiveView_mvp.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
+wrapEvent	Chair Prac/lib/webgl-debug.js	/^  function wrapEvent(listener) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+wrapEvent	View Prac/lib/webgl-debug.js	/^  function wrapEvent(listener) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+wrapper_	Chair Prac/lib/webgl-debug.js	/^    wrapper_[functionName] = function(f) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+wrapper_	View Prac/lib/webgl-debug.js	/^    wrapper_[functionName] = function(f) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
