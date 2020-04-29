@@ -415,7 +415,6 @@
 ANGLE_STEP	Chair Prac/p3/chair.js	/^var ANGLE_STEP = 3.0;  \/\/ The increments of rotation angle (degrees)$/;"	v
 ANGLE_STEP	Scene/lecture6-example/JointModel.js	/^var ANGLE_STEP = 3.0;    \/\/ The increments of rotation angle (degrees)$/;"	v
 ANGLE_STEP	Scene/lecture6-example/MultiJointModel.js	/^var ANGLE_STEP = 3.0;     \/\/ The increments of rotation angle (degrees)$/;"	v
-ANGLE_STEP	src/src/main.js	/^var ANGLE_STEP = 3.0;     \/\/ The increments of rotation angle (degrees)$/;"	v
 AnonymousFunction285bd8d50100	View Prac/lib/webgl-utils.js	/^    canvas.addEventListener("webglcontextcreationerror", function(event) {$/;"	f
 AnonymousFunction2cb2cf4b0100	Prac 1/lib/webgl-utils.js	/^    canvas.addEventListener("webglcontextcreationerror", function(event) {$/;"	f
 AnonymousFunction4090b4810100	Chair Prac/lib/webgl-utils.js	/^    canvas.addEventListener("webglcontextcreationerror", function(event) {$/;"	f
@@ -495,6 +494,7 @@ Matrix4	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setIdentity = function(
 Matrix4	View Prac/lib/cuon-matrix.js	/^var Matrix4 = function(opt_src) {$/;"	f
 Matrix4	src/lib/cuon-matrix.js	/^Matrix4.prototype.setIdentity = function() {$/;"	c
 Matrix4	src/lib/cuon-matrix.js	/^var Matrix4 = function(opt_src) {$/;"	f
+Node	src/src/main.js	/^class Node {$/;"	c
 VSHADER_SOURCE	Chair Prac/p3/chair.js	/^var VSHADER_SOURCE =$/;"	v
 VSHADER_SOURCE	Prac 1/p1/HelloTriangle.js	/^var VSHADER_SOURCE =$/;"	v
 VSHADER_SOURCE	Prac 1/p1/p1-ColoredPoints.js	/^var VSHADER_SOURCE =$/;"	v
@@ -528,6 +528,7 @@ activeTexture	Prac 1/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	c
 activeTexture	Scene/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 activeTexture	View Prac/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 activeTexture	src/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+add_child	src/src/main.js	/^  add_child(node){$/;"	m	class:Node
 bindBuffer	Chair Prac/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bindBuffer	Prac 1/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bindBuffer	Scene/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -578,6 +579,7 @@ bufferSubData	Prac 1/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	c
 bufferSubData	Scene/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bufferSubData	View Prac/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bufferSubData	src/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+c2_node	src/src/main.js	/^let c2_node = new Node(-20, -5.0, 0, 0, 0, 0);$/;"	v
 canvas-element-id	Prac 1/p1/p1-GL_Context.html	/^<canvas id="canvas-element-id" width="800" height="600">$/;"	I
 checkFramebufferStatus	Chair Prac/lib/webgl-debug.js	/^  'checkFramebufferStatus': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 checkFramebufferStatus	Chair Prac/lib/webgl-debug.js	/^  wrapper_.checkFramebufferStatus = function(f) {$/;"	f	function:wrapper_
@@ -615,6 +617,7 @@ concat	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.concat = function(other) {$
 concat	Scene/lib/cuon-matrix.js	/^Matrix4.prototype.concat = function(other) {$/;"	m	class:Matrix4
 concat	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.concat = function(other) {$/;"	m	class:Matrix4
 concat	src/lib/cuon-matrix.js	/^Matrix4.prototype.concat = function(other) {$/;"	m	class:Matrix4
+constructor	src/src/main.js	/^  constructor(x, y, z, x_rot, y_rot, z_rot) {$/;"	m	class:Node
 copyTexImage2D	Chair Prac/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 copyTexImage2D	Prac 1/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 copyTexImage2D	Scene/lib/webgl-debug.js	/^  'copyTexImage2D': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -658,7 +661,8 @@ disable	src/lib/webgl-debug.js	/^  'disable': { 0:true },$/;"	c	class:WebGLDebug
 draw	Chair Prac/p3/chair.js	/^function draw(gl, u_ModelMatrix, u_NormalMatrix, u_isLighting) {$/;"	f
 draw	Scene/lecture6-example/JointModel.js	/^function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
 draw	Scene/lecture6-example/MultiJointModel.js	/^function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
-draw	src/src/main.js	/^function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
+draw	src/src/main.js	/^    this.draw = function() {$/;"	m	class:Node.constructor
+draw	src/src/main.js	/^function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {$/;"	f
 drawArrays	Chair Prac/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawArrays	Prac 1/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawArrays	Scene/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -715,15 +719,11 @@ frustum	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.frustum = function(left
 frustum	src/lib/cuon-matrix.js	/^Matrix4.prototype.frustum = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
 g_arm1Angle	Scene/lecture6-example/JointModel.js	/^var g_arm1Angle = -90.0; \/\/ The rotation angle of arm1 (degrees)$/;"	v
 g_arm1Angle	Scene/lecture6-example/MultiJointModel.js	/^var g_arm1Angle = 90.0;   \/\/ The rotation angle of arm1 (degrees)$/;"	v
-g_arm1Angle	src/src/main.js	/^var g_arm1Angle = 90.0;   \/\/ The rotation angle of arm1 (degrees)$/;"	v
 g_colors	Prac 1/p1/p1-ColoredPoints.js	/^var g_colors = [];  \/\/ The array to store the color of a point$/;"	v
 g_joint1Angle	Scene/lecture6-example/JointModel.js	/^var g_joint1Angle = 0.0; \/\/ The rotation angle of joint1 (degrees)$/;"	v
 g_joint1Angle	Scene/lecture6-example/MultiJointModel.js	/^var g_joint1Angle = 45.0; \/\/ The rotation angle of joint1 (degrees)$/;"	v
-g_joint1Angle	src/src/main.js	/^var g_joint1Angle = 45.0; \/\/ The rotation angle of joint1 (degrees)$/;"	v
 g_joint2Angle	Scene/lecture6-example/MultiJointModel.js	/^var g_joint2Angle = 0.0;  \/\/ The rotation angle of joint2 (degrees)$/;"	v
-g_joint2Angle	src/src/main.js	/^var g_joint2Angle = 0.0;  \/\/ The rotation angle of joint2 (degrees)$/;"	v
 g_joint3Angle	Scene/lecture6-example/MultiJointModel.js	/^var g_joint3Angle = 0.0;  \/\/ The rotation angle of joint3 (degrees)$/;"	v
-g_joint3Angle	src/src/main.js	/^var g_joint3Angle = 0.0;  \/\/ The rotation angle of joint3 (degrees)$/;"	v
 g_matrixStack	Chair Prac/p3/chair.js	/^var g_matrixStack = []; \/\/ Array for storing a matrix$/;"	v
 g_matrixStack	Scene/lecture6-example/MultiJointModel.js	/^var g_matrixStack = []; \/\/ Array for storing a matrix$/;"	v
 g_matrixStack	src/src/main.js	/^var g_matrixStack = []; \/\/ Array for storing a matrix$/;"	v
@@ -877,7 +877,7 @@ isWebGLObject	src/lib/webgl-debug.js	/^  function isWebGLObject(obj) {$/;"	f	fun
 keydown	Chair Prac/p3/chair.js	/^function keydown(ev, gl, u_ModelMatrix, u_NormalMatrix, u_isLighting) {$/;"	f
 keydown	Scene/lecture6-example/JointModel.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
 keydown	Scene/lecture6-example/MultiJointModel.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
-keydown	src/src/main.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
+keydown	src/src/main.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {$/;"	f
 loadFileAJAX	Chair Prac/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
 loadFileAJAX	Prac 1/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
 loadFileAJAX	Scene/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
@@ -1009,6 +1009,7 @@ registerOnContextRestoredListener	Prac 1/lib/webgl-debug.js	/^  wrapper_.registe
 registerOnContextRestoredListener	Scene/lib/webgl-debug.js	/^  wrapper_.registerOnContextRestoredListener = function(listener) {$/;"	f	function:wrapper_
 registerOnContextRestoredListener	View Prac/lib/webgl-debug.js	/^  wrapper_.registerOnContextRestoredListener = function(listener) {$/;"	f	function:wrapper_
 registerOnContextRestoredListener	src/lib/webgl-debug.js	/^  wrapper_.registerOnContextRestoredListener = function(listener) {$/;"	f	function:wrapper_
+render	src/src/main.js	/^  render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	m	class:Node
 renderbufferStorage	Chair Prac/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 renderbufferStorage	Prac 1/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 renderbufferStorage	Scene/lib/webgl-debug.js	/^  'renderbufferStorage': { 0:true, 1:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -1039,6 +1040,7 @@ scale	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.scale = function(x, y, z) {$
 scale	Scene/lib/cuon-matrix.js	/^Matrix4.prototype.scale = function(x, y, z) {$/;"	m	class:Matrix4
 scale	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.scale = function(x, y, z) {$/;"	m	class:Matrix4
 scale	src/lib/cuon-matrix.js	/^Matrix4.prototype.scale = function(x, y, z) {$/;"	m	class:Matrix4
+setDraw	src/src/main.js	/^  setDraw(func){$/;"	m	class:Node
 setFrustum	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setFrustum = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
 setFrustum	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.setFrustum = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
 setFrustum	Scene/lib/cuon-matrix.js	/^Matrix4.prototype.setFrustum = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4

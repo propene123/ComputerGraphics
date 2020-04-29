@@ -1,4 +1,55 @@
 // MultiJointModel.js (c) 2012 matsuda and itami
+
+class Node {
+  constructor(x, y, z, x_rot, y_rot, z_rot) {
+    this._x = x;
+    this._y = y;
+    this._z = z;
+    this._x_rot = x_rot;
+    this._y_rot = y_rot;
+    this._z_rot = z_rot;
+    // empty children array
+    this._children = [];
+    // default empty draw function
+    this.draw = function() {
+      return;
+    }
+  }
+
+  render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {
+    pushMatrix(g_modelMatrix)
+      g_modelMatrix.setTranslate(this._x, this._y, this._z);
+      g_modelMatrix.rotate(this._x_rot, 1.0, 0.0, 0.0);
+      g_modelMatrix.rotate(this._y_rot, 0.0, 1.0, 0.0);
+      g_modelMatrix.rotate(this._z_rot, 0.0, 0.0, 1.0);
+        pushMatrix(g_modelMatrix)
+          this.draw(viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+        g_modelMatrix = popMatrix();
+      for(n of this._children){
+        n.render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+      }
+    g_modelMatrix = popMatrix();
+      
+  }
+
+
+  add_child(node){
+    this._children.push(node);
+  }
+
+
+  setDraw(func){
+    this.draw = func;
+  }
+
+  
+}
+
+
+
+
+
+
 // Vertex shader program
 var VSHADER_SOURCE =
   'attribute vec4 a_Position;\n' +
@@ -25,6 +76,8 @@ var FSHADER_SOURCE =
   'void main() {\n' +
   '  gl_FragColor = v_Color;\n' +
   '}\n';
+
+let c2_node = new Node(-20, -5.0, 0, 0, 0, 0);
 
 function main() {
   // Retrieve <canvas> element
@@ -65,25 +118,43 @@ function main() {
   // Calculate the view projection matrix
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 100.0);
-  viewProjMatrix.lookAt(20.0, 10.0, 30.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+  viewProjMatrix.lookAt(0.0, 0.0, 50.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+
+  let w_node = new Node(0,0,0,0,0,0);
+  let c_node = new Node(0, -5.0, 0, 0, 45.0, 0);
+  c_node.setDraw(() => {
+    drawBox(gl, n, 10, 10, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix)
+  });
+  c2_node.setDraw(() => {
+    drawBox(gl, n, 10, 10, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix)
+  });
+  w_node.add_child(c_node);
+  w_node.add_child(c2_node);
 
   // Register the event handler to be called on key press
-  document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix); };
+  document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
 
   
 
   //This is where we render world
-//　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix); // Draw the robot arm
+　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
 }
 
-var ANGLE_STEP = 3.0;     // The increments of rotation angle (degrees)
-var g_arm1Angle = 90.0;   // The rotation angle of arm1 (degrees)
-var g_joint1Angle = 45.0; // The rotation angle of joint1 (degrees)
-var g_joint2Angle = 0.0;  // The rotation angle of joint2 (degrees)
-var g_joint3Angle = 0.0;  // The rotation angle of joint3 (degrees)
+//var ANGLE_STEP = 3.0;     // The increments of rotation angle (degrees)
+//var g_arm1Angle = 90.0;   // The rotation angle of arm1 (degrees)
+//var g_joint1Angle = 45.0; // The rotation angle of joint1 (degrees)
+//var g_joint2Angle = 0.0;  // The rotation angle of joint2 (degrees)
+//var g_joint3Angle = 0.0;  // The rotation angle of joint3 (degrees)
 
-function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {
-  //draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
+  switch (ev.keyCode) {
+    case 37:
+      c2_node._y_rot = (c2_node._y_rot - 3) % 360;
+      break;
+    default:
+      return;
+  }
+  draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
 }
 
 function initVertexBuffers(gl) {
@@ -163,9 +234,10 @@ function initArrayBuffer(gl, attribute, data, type, num) {
 // Coordinate transformation matrix
 var g_modelMatrix = new Matrix4(), g_mvpMatrix = new Matrix4();
 
-function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {
+function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
   // Clear color and depth buffer
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  world_node.render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 }
 
 var g_matrixStack = []; // Array for storing a matrix
