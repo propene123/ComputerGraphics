@@ -64,7 +64,9 @@ function main() {
 
   // calculate the view matrix and projection matrix
   viewMatrix.setLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
+
   projMatrix.setPerspective(30, canvas.width/canvas.height, 1, 100);
+
   // Pass the view and projection matrix to u_ViewMatrix, u_ProjMatrix
   gl.uniformMatrix4fv(u_ViewMatrix, false, viewMatrix.elements);
   gl.uniformMatrix4fv(u_ProjMatrix, false, projMatrix.elements);
