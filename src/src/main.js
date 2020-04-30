@@ -46,6 +46,21 @@ class Node {
 }
 
 
+let w_node = new Node(0, 0, 0, 0, 0, 0);
+//let floor = new Node(0, 0, 0, 0, 0, 0);
+//w_node.add_child(floor);
+//let back_wall = new Node(0, 0, -250, 0, 0, 0);
+//w_node.add_child(back_wall);
+let table = new Node(0, 0, 0, 0, 0, 0);
+w_node.add_child(table);
+let table_base = new Node(0, 0, 0, 0, 0, 0);
+table.add_child(table_base);
+let table_r_panel = new Node(10, 13, 0, 0, 0, 0);
+table_base.add_child(table_r_panel);
+let table_l_panel = new Node(-10, 13, 0, 0, 0, 0);
+table_base.add_child(table_l_panel);
+
+
 
 
 
@@ -77,7 +92,6 @@ var FSHADER_SOURCE =
   '  gl_FragColor = v_Color;\n' +
   '}\n';
 
-let c2_node = new Node(-20, -5.0, 0, 0, 0, 0);
 
 function main() {
   // Retrieve <canvas> element
@@ -117,22 +131,39 @@ function main() {
 
   // Calculate the view projection matrix
   var viewProjMatrix = new Matrix4();
-  viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 100.0);
-  viewProjMatrix.lookAt(0.0, 0.0, 50.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-
-  let w_node = new Node(0,0,0,0,0,0);
-  let c_node = new Node(0, -5.0, 0, 0, 45.0, 0);
-  c_node.setDraw(() => {
-    drawBox(gl, n, 10, 10, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix)
-  });
-  c2_node.setDraw(() => {
-    drawBox(gl, n, 10, 10, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix)
-  });
-  w_node.add_child(c_node);
-  w_node.add_child(c2_node);
+  viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
+  viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
 
   // Register the event handler to be called on key press
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
+
+
+  //floor.setDraw(() => {
+    //drawBox(gl, n, 500, -1, 500, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  //});
+
+  //back_wall.setDraw(() => {
+    //drawBox(gl, n, 500, 500, -1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  //});
+
+
+  // geometry for table base
+  table_base.setDraw(()=> {
+    drawBox(gl, n, 5, 15, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  });
+
+  table_r_panel.setDraw(() => {
+    drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  });
+
+
+  table_l_panel.setDraw(() => {
+    drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  });
+
+
+
+
 
   
 
@@ -147,14 +178,7 @@ function main() {
 //var g_joint3Angle = 0.0;  // The rotation angle of joint3 (degrees)
 
 function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
-  switch (ev.keyCode) {
-    case 37:
-      c2_node._y_rot = (c2_node._y_rot - 3) % 360;
-      break;
-    default:
-      return;
-  }
-  draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
+  //draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
 }
 
 function initVertexBuffers(gl) {

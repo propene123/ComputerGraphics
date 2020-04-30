@@ -579,7 +579,6 @@ bufferSubData	Prac 1/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	c
 bufferSubData	Scene/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bufferSubData	View Prac/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bufferSubData	src/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
-c2_node	src/src/main.js	/^let c2_node = new Node(-20, -5.0, 0, 0, 0, 0);$/;"	v
 canvas-element-id	Prac 1/p1/p1-GL_Context.html	/^<canvas id="canvas-element-id" width="800" height="600">$/;"	I
 checkFramebufferStatus	Chair Prac/lib/webgl-debug.js	/^  'checkFramebufferStatus': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 checkFramebufferStatus	Chair Prac/lib/webgl-debug.js	/^  wrapper_.checkFramebufferStatus = function(f) {$/;"	f	function:wrapper_
@@ -1116,6 +1115,10 @@ stencilOpSeparate	Prac 1/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1
 stencilOpSeparate	Scene/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 stencilOpSeparate	View Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 stencilOpSeparate	src/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+table	src/src/main.js	/^let table = new Node(0, 0, 0, 0, 0, 0);$/;"	v
+table_base	src/src/main.js	/^let table_base = new Node(0, 0, 0, 0, 0, 0);$/;"	v
+table_l_panel	src/src/main.js	/^let table_l_panel = new Node(-10, 13, 0, 0, 0, 0);$/;"	v
+table_r_panel	src/src/main.js	/^let table_r_panel = new Node(10, 13, 0, 0, 0, 0);$/;"	v
 texImage2D	Chair Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 texImage2D	Prac 1/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 texImage2D	Scene/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -1152,6 +1155,7 @@ vertexAttribPointer	Scene/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true
 vertexAttribPointer	View Prac/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 vertexAttribPointer	src/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 viewMatrix	Chair Prac/p3/chair.js	/^var viewMatrix = new Matrix4();  \/\/ The view matrix$/;"	v
+w_node	src/src/main.js	/^let w_node = new Node(0, 0, 0, 0, 0, 0);$/;"	v
 webgl	Chair Prac/p3/chair.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
 webgl	Prac 1/p1/HelloTriangle.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
 webgl	Prac 1/p1/p1-ColoredPoints.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
