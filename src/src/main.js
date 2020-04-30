@@ -44,10 +44,10 @@ class Node {
 
 
 let w_node = new Node(0, 0, 0, 0, 0, 0);
-//let floor = new Node(0, 0, 0, 0, 0, 0);
-//w_node.add_child(floor);
-//let back_wall = new Node(0, 0, -250, 0, 0, 0);
-//w_node.add_child(back_wall);
+let floor = new Node(0, 0, 0, 0, 0, 0);
+w_node.add_child(floor);
+let back_wall = new Node(0, 0, -250, 0, 0, 0);
+w_node.add_child(back_wall);
 
 
 
