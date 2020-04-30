@@ -222,6 +222,29 @@ let shade_l5 = new Node(0, 1, 0, 0, 0, 0);
 shade_l4.add_child(shade_l5);
 w_node.add_child(lamp);
 
+let fan = new Node(50, 0, 0, 0, 0, 0);
+let fan_spinner = new Node(0, -1, 0, 0, 0, 0);
+fan.add_child(fan_spinner);
+let fan_hold = new Node(0, -3, 0, 0, 0, 0);
+fan_spinner.add_child(fan_hold);
+let fan_r_attach = new Node(2, 1, 0, 0, 0, 0);
+fan_hold.add_child(fan_r_attach);
+let fan_r_blade = new Node(5.5, 0.25, 0, 0, 0, 0);
+fan_r_attach.add_child(fan_r_blade);
+let fan_l_attach = new Node(-2, 1, 0, 0, 0, 0);
+fan_hold.add_child(fan_l_attach);
+let fan_l_blade = new Node(-5.5, 0.25, 0, 0, 0, 0);
+fan_l_attach.add_child(fan_l_blade);
+let fan_b_attach = new Node(0, 1, -2, 0, 0, 0);
+fan_hold.add_child(fan_b_attach);
+let fan_b_blade = new Node(0, 0.25, -5.5, 0, 0, 0);
+fan_b_attach.add_child(fan_b_blade);
+let fan_f_attach = new Node(0, 1, 2, 0, 0, 0);
+fan_hold.add_child(fan_f_attach);
+let fan_f_blade = new Node(0, 0.25, 5.5, 0, 0, 0);
+fan_f_attach.add_child(fan_f_blade);
+w_node.add_child(fan);
+
 
 
 

@@ -738,6 +738,17 @@ enable	Prac 1/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebu
 enable	Scene/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 enable	View Prac/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 enable	src/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+fan	src/src/main.js	/^let fan = new Node(50, 0, 0, 0, 0, 0);$/;"	v
+fan_b_attach	src/src/main.js	/^let fan_b_attach = new Node(0, 1, -2, 0, 0, 0);$/;"	v
+fan_b_blade	src/src/main.js	/^let fan_b_blade = new Node(0, 0.25, -5.5, 0, 0, 0);$/;"	v
+fan_f_attach	src/src/main.js	/^let fan_f_attach = new Node(0, 1, 2, 0, 0, 0);$/;"	v
+fan_f_blade	src/src/main.js	/^let fan_f_blade = new Node(0, 0.25, 5.5, 0, 0, 0);$/;"	v
+fan_hold	src/src/main.js	/^let fan_hold = new Node(0, -3, 0, 0, 0, 0);$/;"	v
+fan_l_attach	src/src/main.js	/^let fan_l_attach = new Node(-2, 1, 0, 0, 0, 0);$/;"	v
+fan_l_blade	src/src/main.js	/^let fan_l_blade = new Node(-5.5, 0.25, 0, 0, 0, 0);$/;"	v
+fan_r_attach	src/src/main.js	/^let fan_r_attach = new Node(2, 1, 0, 0, 0, 0);$/;"	v
+fan_r_blade	src/src/main.js	/^let fan_r_blade = new Node(5.5, 0.25, 0, 0, 0, 0);$/;"	v
+fan_spinner	src/src/main.js	/^let fan_spinner = new Node(0, -1, 0, 0, 0, 0);$/;"	v
 framebufferRenderbuffer	Chair Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 framebufferRenderbuffer	Prac 1/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 framebufferRenderbuffer	Scene/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
