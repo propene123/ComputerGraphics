@@ -331,6 +331,12 @@ function main() {
     return;
   }
 
+  var u_UseTextures = gl.getUniformLocation(gl.program, 'u_UseTextures');
+  if(!u_UseTextures) {
+    console.log(' Failed to get texture flag storage location');
+    return;
+  }
+
   // Calculate the view projection matrix
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
