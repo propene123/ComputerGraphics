@@ -265,34 +265,93 @@ cei_t_plate.add_child(cei_f_plate);
 w_node.add_child(cei_lamp);
 
 
-
-
 // Vertex shader program
-var VSHADER_SOURCE =
-  'attribute vec4 a_Position;\n' +
-  'attribute vec4 a_Normal;\n' +
-  'uniform mat4 u_MvpMatrix;\n' +
-  'uniform mat4 u_NormalMatrix;\n' +
-  'varying vec4 v_Color;\n' +
-  'void main() {\n' +
-  '  gl_Position = u_MvpMatrix * a_Position;\n' +
-  // Shading calculation to make the arm look three-dimensional
-  '  vec3 lightDirection = normalize(vec3(0.0, 0.5, 0.7));\n' + // Light direction
-  '  vec4 color = vec4(1.0, 0.4, 0.0, 1.0);\n' +  // Robot color
-  '  vec3 normal = normalize((u_NormalMatrix * a_Normal).xyz);\n' +
-  '  float nDotL = max(dot(normal, lightDirection), 0.0);\n' +
-  '  v_Color = vec4(color.rgb * nDotL + vec3(0.1), color.a);\n' +
-  '}\n';
+ var VSHADER_SOURCE =
+   'attribute vec4 a_Position;\n' +
+   'attribute vec4 a_Color;\n' +
+   'attribute vec4 a_Normal;\n' +
+   'attribute vec2 a_TexCoords;\n' +
+   'uniform mat4 u_MvpMatrix;\n' +
+   'uniform mat4 u_ModelMatrix;\n' +    // Model matrix
+   'uniform mat4 u_NormalMatrix;\n' +   // Transformation matrix of the normal
+   'varying vec4 v_Color;\n' +
+   'varying vec3 v_Normal;\n' +
+   'varying vec2 v_TexCoords;\n' +
+   'varying vec3 v_Position;\n' +
+   'void main() {\n' +
+   '  gl_Position = u_MvpMatrix * a_Position;\n' +
+      // Calculate the vertex position in the world coordinate
+   '  v_Position = vec3(u_ModelMatrix * a_Position);\n' +
+   '  v_Normal = normalize(vec3(u_NormalMatrix * a_Normal));\n' +
+   '  v_Color = a_Color;\n' + 
+   '  v_TexCoords = a_TexCoords;\n' +
+   '}\n';
+
 
 // Fragment shader program
-var FSHADER_SOURCE =
-  '#ifdef GL_ES\n' +
-  'precision mediump float;\n' +
-  '#endif\n' +
-  'varying vec4 v_Color;\n' +
-  'void main() {\n' +
-  '  gl_FragColor = v_Color;\n' +
-  '}\n';
+ var FSHADER_SOURCE =
+   '#ifdef GL_ES\n' +
+   'precision mediump float;\n' +
+   '#endif\n' +
+   'uniform bool u_UseTextures;\n' +    // Texture enable/disable flag
+   'uniform vec3 u_LightColor;\n' +     // Light color
+   'uniform vec3 u_LightPosition;\n' +  // Position of the light source
+   'uniform vec3 u_AmbientLight;\n' +   // Ambient light color
+   'varying vec3 v_Normal;\n' +
+   'varying vec3 v_Position;\n' +
+   'varying vec4 v_Color;\n' +
+   'uniform sampler2D u_Sampler;\n' +
+   'varying vec2 v_TexCoords;\n' +
+   'void main() {\n' +
+      // Normalize the normal because it is interpolated and not 1.0 in length any more
+   '  vec3 normal = normalize(v_Normal);\n' +
+      // Calculate the light direction and make its length 1.
+   '  vec3 lightDirection = normalize(u_LightPosition - v_Position);\n' +
+      // The dot product of the light direction and the orientation of a surface (the normal)
+   '  float nDotL = max(dot(lightDirection, normal), 0.0);\n' +
+      // Calculate the final color from diffuse reflection and ambient reflection
+   '  vec3 diffuse;\n' +
+   '  if (u_UseTextures) {\n' +
+   '     vec4 TexColor = texture2D(u_Sampler, v_TexCoords);\n' +
+   '     diffuse = u_LightColor * TexColor.rgb * nDotL * 1.2;\n' +
+   '  } else {\n' +
+   '     vec4 color = vec4(1.0, 0.4, 0.0, 1.0);\n' +
+   '     diffuse = u_LightColor * color.rgb * nDotL;\n' +
+   '  }\n' +
+   '  vec3 ambient = u_AmbientLight * v_Color.rgb;\n' +
+   '  gl_FragColor = vec4(diffuse + ambient, v_Color.a);\n' +
+   '}\n';
+
+
+
+
+// original shaders
+//// Vertex shader program
+//var VSHADER_SOURCE =
+  //'attribute vec4 a_Position;\n' +
+  //'attribute vec4 a_Normal;\n' +
+  //'uniform mat4 u_MvpMatrix;\n' +
+  //'uniform mat4 u_NormalMatrix;\n' +
+  //'varying vec4 v_Color;\n' +
+  //'void main() {\n' +
+  //'  gl_Position = u_MvpMatrix * a_Position;\n' +
+  //// Shading calculation to make the arm look three-dimensional
+  //'  vec3 lightDirection = normalize(vec3(0.0, 0.5, 0.7));\n' + // Light direction
+  //'  vec4 color = vec4(1.0, 0.4, 0.0, 1.0);\n' +  // Robot color
+  //'  vec3 normal = normalize((u_NormalMatrix * a_Normal).xyz);\n' +
+  //'  float nDotL = max(dot(normal, lightDirection), 0.0);\n' +
+  //'  v_Color = vec4(color.rgb * nDotL + vec3(0.1), color.a);\n' +
+  //'}\n';
+
+//// Fragment shader program
+//var FSHADER_SOURCE =
+  //'#ifdef GL_ES\n' +
+  //'precision mediump float;\n' +
+  //'#endif\n' +
+  //'varying vec4 v_Color;\n' +
+  //'void main() {\n' +
+  //'  gl_FragColor = v_Color;\n' +
+  //'}\n';
 
 
 function main() {
@@ -323,28 +382,147 @@ function main() {
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
   gl.enable(gl.DEPTH_TEST);
 
-  // Get the storage locations of uniform variables
-  var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
-  var u_NormalMatrix = gl.getUniformLocation(gl.program, 'u_NormalMatrix');
-  if (!u_MvpMatrix || !u_NormalMatrix) {
-    console.log('Failed to get the storage location');
-    return;
-  }
-
+// Get the storage locations of uniform variables
+   var u_ModelMatrix = gl.getUniformLocation(gl.program, 'u_ModelMatrix');
+   var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
+   var u_NormalMatrix = gl.getUniformLocation(gl.program, 'u_NormalMatrix');
+   var u_LightColor = gl.getUniformLocation(gl.program, 'u_LightColor');
+   var u_LightPosition = gl.getUniformLocation(gl.program, 'u_LightPosition');
+   var u_AmbientLight = gl.getUniformLocation(gl.program, 'u_AmbientLight');
+   if (!u_ModelMatrix || !u_MvpMatrix || !u_NormalMatrix || !u_LightColor || !u_LightPosition　|| !u_AmbientLight) {
+     console.log('Failed to get the storage location');
+     return;
+   }
   var u_UseTextures = gl.getUniformLocation(gl.program, 'u_UseTextures');
   if(!u_UseTextures) {
     console.log(' Failed to get texture flag storage location');
     return;
   }
 
+
+  // Set the light color (white)
+  gl.uniform3f(u_LightColor, 1.0, 1.0, 1.0);
+  // Set the light direction (in the world coordinate)
+  gl.uniform3f(u_LightPosition, 2.3, 4.0, 3.5);
+  // Set the ambient light
+  gl.uniform3f(u_AmbientLight, 0.2, 0.2, 0.2);
+  
+  var u_Sampler = gl.getUniformLocation(gl.program, 'u_Sampler');
+  if (!u_Sampler) {
+    console.log('Failed to get the storage location of u_Sampler');
+    return false;
+  }
+
   // Calculate the view projection matrix
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
   viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
-  //viewProjMatrix.rotate(-100, 0, 1, 0);
+  viewProjMatrix.rotate(-100, 0, 1, 0);
 
   // Register the event handler to be called on key press
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
+
+  var drawer_texture = gl.createTexture();   // Create a texture object
+  if (!drawer_texture) {
+     console.log('Failed to create drawerer texture object');
+     return false;
+   }
+  var metal_texture = gl.createTexture();   // Create a texture object
+  if (!metal_texture) {
+     console.log('Failed to create metal texture object');
+     return false;
+   }
+  var sofa_texture = gl.createTexture();   // Create a texture object
+  if (!sofa_texture) {
+     console.log('Failed to create sofa texture object');
+     return false;
+   }
+  var floor_texture = gl.createTexture();   // Create a texture object
+  if (!floor) {
+     console.log('Failed to create floor texture object');
+     return false;
+   }
+  var wood_texture = gl.createTexture();   // Create a texture object
+  if (!wood_texture) {
+     console.log('Failed to create wood texture object');
+     return false;
+   }
+  
+  drawer_texture.image = new Image();
+  if(!drawer_texture.image) {
+    console.log('Failed to create drawer_texture image object');
+  }
+  metal_texture.image = new Image();
+  if(!metal_texture.image) {
+    console.log('Failed to create metal_texture image object');
+  }
+  sofa_texture.image = new Image();
+  if(!sofa_texture.image) {
+    console.log('Failed to create sofa_texture image object');
+  }
+  floor_texture.image = new Image();
+  if(!floor_texture.image) {
+    console.log('Failed to create floor_texture image object');
+  }
+  wood_texture.image = new Image();
+  if(!wood_texture.image) {
+    console.log('Failed to create wood_texture image object');
+  }
+
+  table_l_panel.setDraw(() => {
+    drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  });
+  table_base.setDraw(()=> {
+    drawBox(gl, n, 5, 15, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  });
+
+  table_r_panel.setDraw(() => {
+    drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  });
+
+  draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, null, null, null, false);
+  
+
+  wood_texture.image.onload = function() {
+    table_l_panel.setDraw(() => {
+      drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, wood_texture, u_Sampler, u_UseTextures, true);
+    });
+    table_base.setDraw(()=> {
+      drawBox(gl, n, 5, 15, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, wood_texture, u_Sampler, u_UseTextures, true);
+    });
+
+    table_r_panel.setDraw(() => {
+      drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, wood_texture, u_Sampler, u_UseTextures, true);
+    });
+
+    draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, wood_texture, u_Sampler, u_UseTextures, true);
+  　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
+  };
+  wood_texture.image.src = './res/wood_plank.jpg';
+
+  sofa_texture.image.onload = function() {
+    draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, sofa_texture, u_Sampler, u_UseTextures, true);
+  　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
+  };
+  sofa_texture.image.src = './res/sofa.jpg';
+
+  drawer_texture.image.onload = function() {
+    draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, drawer_texture, u_Sampler, u_UseTextures, true);
+  　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
+  };
+  drawer_texture.image.src = './res/drawers.jpg';
+
+  metal_texture.image.onload = function() {
+    draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, metal_texture, u_Sampler, u_UseTextures, true);
+  　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
+  };
+  metal_texture.image.src = './res/metal.jpg';
 
 
   //floor.setDraw(() => {
@@ -357,30 +535,8 @@ function main() {
 
 
   // geometry for table base
-  table_l_panel.setDraw(() => {
-    drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-  });
-  table_base.setDraw(()=> {
-    drawBox(gl, n, 5, 15, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-  });
 
-  table_r_panel.setDraw(() => {
-    drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-  });
 
-  draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-
-  draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-
-  draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-
-  draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-
-  draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-
-  draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-
-  draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
 
 
@@ -392,18 +548,18 @@ function main() {
 }
 
 
-function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture){
   let chair_base = () => {
-    drawBox(gl, n, 10, 2, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 10, 2, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let chair_leg = () => {
-    drawBox(gl, n, 1, 7.5, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 1, 7.5, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let chair_post = () => {
-    drawBox(gl, n, 1, 10, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 1, 10, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let chair_back = () => {
-    drawBox(gl, n, 8, 3, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix)
+    drawBox(gl, n, 8, 3, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture)
   };
 
   chair1.setDraw(chair_base);
@@ -447,21 +603,21 @@ function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
 }
 
 
-function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture){
   let sofa_base = () => {
-    drawBox(gl, n, 40, 6, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 40, 6, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let sofa_leg = () => {
-    drawBox(gl, n, 2, 2, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 2, 2, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let sofa_back_draw = () => {
-    drawBox(gl, n, 40, 16, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 40, 16, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let sofa_arm = () => {
-    drawBox(gl, n, 4, 6, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 4, 6, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let sofa_cushion = () => {
-    drawBox(gl, n, 13, 4, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 13, 4, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   
   sofa.setDraw(sofa_base);
@@ -479,27 +635,27 @@ function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
 }
 
 
-function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture){
   let drawers_base = () => {
-    drawBox(gl, n, 35, 2, 13, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 35, 2, 13, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let drawers_side = () => {
-    drawBox(gl, n, 2, 15, 13, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 2, 15, 13, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let drawers_back = () => {
-    drawBox(gl, n, 39, 17, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 39, 17, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let drawers_top = () => {
-    drawBox(gl, n, 39, 2, 14, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 39, 2, 14, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let drawers_front = () => {
-    drawBox(gl, n, 35, 13, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 35, 13, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let drawer_panel = () => {
-    drawBox(gl, n, 15, 4, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 15, 4, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let drawer_handle = () => {
-    drawBox(gl, n, 3, 1, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 3, 1, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
 
   drawers.setDraw(drawers_base);
@@ -519,24 +675,24 @@ function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
 }
 
 
-function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture){
   let tv_screen = () =>{
-    drawBox(gl, n, 20, 11.25, 1.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 20, 11.25, 1.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let tv_side_bezel = () => {
-    drawBox(gl, n, 1, 11.25, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 1, 11.25, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let tv_top_bezel = () => {
-    drawBox(gl, n, 22, 0.5, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 22, 0.5, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let tv_bottom_bezel = () => {
-    drawBox(gl, n, 22, 1, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 22, 1, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let tv_support = () => {
-    drawBox(gl, n, 2, 3, 1.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 2, 3, 1.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let tv_plate = () => {
-    drawBox(gl, n, 8, 1, 5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 8, 1, 5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
 
   tv.setDraw(tv_screen);
@@ -549,30 +705,30 @@ function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
 }
 
 
-function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture){
   let lamp_base = () => {
-    drawBox(gl, n, 4, 4, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 4, 4, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let lamp_stand_draw = () => {
-    drawBox(gl, n, 1, 4, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 1, 4, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let lamp_light_draw = () => {
-    drawBox(gl, n, 4, 1, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 4, 1, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let shade_l1_draw = () => {
-    drawBox(gl, n, 5, 1, 5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 5, 1, 5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let shade_l2_draw = () => {
-    drawBox(gl, n, 4, 1, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 4, 1, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let shade_l3_draw = () => {
-    drawBox(gl, n, 3, 1, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 3, 1, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let shade_l4_draw = () => {
-    drawBox(gl, n, 2, 1, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 2, 1, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let shade_l5_draw = () => {
-    drawBox(gl, n, 1, 1, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 1, 1, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
 
   
@@ -586,27 +742,27 @@ function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
   shade_l5.setDraw(shade_l5_draw);
 }
 
-function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture){
   let fan_fix_draw = () => {
-    drawBox(gl, n, 2, 3, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 2, 3, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let fan_spin_draw = () => {
-    drawBox(gl, n, 0.5, 1, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 0.5, 1, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let fan_holder_draw = () => {
-    drawBox(gl, n, 3, 3, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 3, 3, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let fan_lr_attach = () => {
-    drawBox(gl, n, 1, 0.5, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 1, 0.5, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let fan_lr_blade = () => {
-    drawBox(gl, n, 10, 1, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 10, 1, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let fan_fb_attach = () => {
-    drawBox(gl, n, 0.5, 0.5, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 0.5, 0.5, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let fan_fb_blade = () => {
-    drawBox(gl, n, 3, 1, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 3, 1, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
 
   fan.setDraw(fan_fix_draw);
@@ -624,27 +780,27 @@ function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
 
 }
 
-function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture){
   let cei_fix_draw = () => {
-    drawBox(gl, n, 3, 2, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 3, 2, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let cei_t_stalk_draw = () => {
-    drawBox(gl, n, 0.5, 6, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 0.5, 6, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let cei_t_plate_draw = () => {
-    drawBox(gl, n, 4, 0.5, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix)
+    drawBox(gl, n, 4, 0.5, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture)
   }
   let cei_b_stalk_draw = () => {
-    drawBox(gl, n, 0.5, 2, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 0.5, 2, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let cei_bulb_draw = () => {
-    drawBox(gl, n, 2, 2, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 2, 2, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let cei_lr_plate = () => {
-    drawBox(gl, n, 0.5, 8, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 0.5, 8, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
   let cei_bf_plate = () => {
-    drawBox(gl, n, 4, 8, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+    drawBox(gl, n, 4, 8, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture);
   };
 
   cei_lamp.setDraw(cei_fix_draw);
@@ -669,6 +825,13 @@ function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
 //var g_joint3Angle = 0.0;  // The rotation angle of joint3 (degrees)
 
 function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
+  switch(ev.keyCode){
+    case 37:
+      fan_spinner._y_rot = (fan_spinner._y_rot - 3) %360;
+      console.log('meep');
+      draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
+      return;
+  }
   //draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
 }
 
@@ -692,6 +855,15 @@ function initVertexBuffers(gl) {
     0.0,-1.0, 0.0,  0.0,-1.0, 0.0,  0.0,-1.0, 0.0,  0.0,-1.0, 0.0, // v7-v4-v3-v2 down
     0.0, 0.0,-1.0,  0.0, 0.0,-1.0,  0.0, 0.0,-1.0,  0.0, 0.0,-1.0  // v4-v7-v6-v5 back
   ]);
+  // Texture Coordinates
+  var texCoords = new Float32Array([
+    1.0, 1.0,    0.0, 1.0,   0.0, 0.0,   1.0, 0.0,  // v0-v1-v2-v3 front
+    0.0, 1.0,    0.0, 0.0,   1.0, 0.0,   1.0, 1.0,  // v0-v3-v4-v5 right
+    1.0, 0.0,    1.0, 1.0,   0.0, 1.0,   0.0, 0.0,  // v0-v5-v6-v1 up
+    1.0, 1.0,    0.0, 1.0,   0.0, 0.0,   1.0, 0.0,  // v1-v6-v7-v2 left
+    0.0, 0.0,    1.0, 0.0,   1.0, 1.0,   0.0, 1.0,  // v7-v4-v3-v2 down
+    0.0, 0.0,    1.0, 0.0,   1.0, 1.0,   0.0, 1.0   // v4-v7-v6-v5 back
+  ]);
 
   // Indices of the vertices
   var indices = new Uint8Array([
@@ -706,6 +878,7 @@ function initVertexBuffers(gl) {
   // Write the vertex property to buffers (coordinates and normals)
   if (!initArrayBuffer(gl, 'a_Position', vertices, gl.FLOAT, 3)) return -1;
   if (!initArrayBuffer(gl, 'a_Normal', normals, gl.FLOAT, 3)) return -1;
+  if (!initArrayBuffer(gl, 'a_TexCoords', texCoords, gl.FLOAT, 2)) return -1;
 
   // Unbind the buffer object
   gl.bindBuffer(gl.ARRAY_BUFFER, null);
@@ -769,7 +942,8 @@ function popMatrix() { // Retrieve the matrix from the array
 var g_normalMatrix = new Matrix4();  // Coordinate transformation matrix for normals
 
 // Draw rectangular solid
-function drawBox(gl, n, width, height, depth, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {
+function drawBox(gl, n, width, height, depth, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTextures, use_texture) {
+    // only do this if we actually want to render a texture
     // Scale a cube and draw
     g_modelMatrix.scale(width, height, depth);
     // Calculate the model view project matrix and pass it to u_MvpMatrix

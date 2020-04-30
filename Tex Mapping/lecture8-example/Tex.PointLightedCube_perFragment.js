@@ -281,8 +281,9 @@ function loadTexAndDraw(gl, n, texture, u_Sampler, u_UseTextures) {
   // Set the texture image
   gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, texture.image);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-
-  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  gl.texParameteri(TEXTURE_2D, TEXTURE_MAG_FILTER, LINEAR);
+  gl.texParameteri(TEXTURE_2D, TEXTURE_WRAP_S, CLAMP_TO_EDGE);
+  gl.texParameteri(TEXTURE_2D, TEXTURE_WRAP_T, CLAMP_TO_EDGE);
 
   // Assign u_Sampler to TEXTURE0
   gl.uniform1i(u_Sampler, 0);

@@ -671,7 +671,7 @@ FSHADER_SOURCE	Tex Mapping/lecture8-example/MultiTexture.js	/^var FSHADER_SOURCE
 FSHADER_SOURCE	Tex Mapping/lecture8-example/Tex.PointLightedCube_perFragment.js	/^var FSHADER_SOURCE =$/;"	v
 FSHADER_SOURCE	View Prac/p2/PerspectiveView.js	/^var FSHADER_SOURCE =$/;"	v
 FSHADER_SOURCE	View Prac/p2/PerspectiveView_mvp.js	/^var FSHADER_SOURCE =$/;"	v
-FSHADER_SOURCE	src/src/main.js	/^var FSHADER_SOURCE =$/;"	v
+FSHADER_SOURCE	src/src/main.js	/^ var FSHADER_SOURCE =$/;"	v
 Matrix4	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.setIdentity = function() {$/;"	c
 Matrix4	Chair Prac/lib/cuon-matrix.js	/^var Matrix4 = function(opt_src) {$/;"	f
 Matrix4	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.setIdentity = function() {$/;"	c
@@ -696,7 +696,7 @@ VSHADER_SOURCE	Tex Mapping/lecture8-example/MultiTexture.js	/^var VSHADER_SOURCE
 VSHADER_SOURCE	Tex Mapping/lecture8-example/Tex.PointLightedCube_perFragment.js	/^var VSHADER_SOURCE =$/;"	v
 VSHADER_SOURCE	View Prac/p2/PerspectiveView.js	/^var VSHADER_SOURCE =$/;"	v
 VSHADER_SOURCE	View Prac/p2/PerspectiveView_mvp.js	/^var VSHADER_SOURCE =$/;"	v
-VSHADER_SOURCE	src/src/main.js	/^var VSHADER_SOURCE =$/;"	v
+VSHADER_SOURCE	src/src/main.js	/^ var VSHADER_SOURCE =$/;"	v
 Vector3	Chair Prac/lib/cuon-matrix.js	/^var Vector3 = function(opt_src) {$/;"	c
 Vector3	Prac 1/lib/cuon-matrix.js	/^var Vector3 = function(opt_src) {$/;"	c
 Vector3	Scene/lib/cuon-matrix.js	/^var Vector3 = function(opt_src) {$/;"	c
@@ -971,7 +971,7 @@ drawArrays	View Prac/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	c	clas
 drawArrays	src/lib/webgl-debug.js	/^  'drawArrays': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawBox	Scene/lecture6-example/JointModel.js	/^function drawBox(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
 drawBox	Scene/lecture6-example/MultiJointModel.js	/^function drawBox(gl, n, width, height, depth, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
-drawBox	src/src/main.js	/^function drawBox(gl, n, width, height, depth, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
+drawBox	src/src/main.js	/^function drawBox(gl, n, width, height, depth, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, textu/;"	f
 drawElements	Chair Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	Prac 1/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	Scene/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -979,13 +979,13 @@ drawElements	Tex Mapping/lecture8-example/lib/webgl-debug.js	/^  'drawElements':
 drawElements	Tex Mapping/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	src/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
-draw_cei_lamp	src/src/main.js	/^function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
-draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
-draw_drawers	src/src/main.js	/^function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
-draw_fan	src/src/main.js	/^function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
-draw_lamp	src/src/main.js	/^function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
-draw_sofa	src/src/main.js	/^function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
-draw_tv	src/src/main.js	/^function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
+draw_cei_lamp	src/src/main.js	/^function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u/;"	f
+draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_U/;"	f
+draw_drawers	src/src/main.js	/^function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_/;"	f
+draw_fan	src/src/main.js	/^function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseT/;"	f
+draw_lamp	src/src/main.js	/^function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_Use/;"	f
+draw_sofa	src/src/main.js	/^function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_Use/;"	f
+draw_tv	src/src/main.js	/^function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, texture, u_Sampler, u_UseTe/;"	f
 drawbox	Chair Prac/p3/chair.js	/^function drawbox(gl, u_ModelMatrix, u_NormalMatrix, n) {$/;"	f
 drawers	src/src/main.js	/^let drawers = new Node(-50, 2, 30, 0, 180, 0);$/;"	v
 drawers_b_panel	src/src/main.js	/^let drawers_b_panel = new Node(0, -2, -7.5, 0, 0, 0);$/;"	v
@@ -1413,6 +1413,10 @@ onkeydown	src/src/main.js	/^  document.onkeydown = function(ev){ keydown(ev, gl,
 onload	Tex Mapping/lecture8-example/MultiTexture.js	/^  image0.onload = function(){ loadTexture(gl, n, texture0, u_Sampler0, image0, 0); };$/;"	f	function:image0
 onload	Tex Mapping/lecture8-example/MultiTexture.js	/^  image1.onload = function(){ loadTexture(gl, n, texture1, u_Sampler1, image1, 1); };$/;"	f	function:image1
 onload	Tex Mapping/lecture8-example/Tex.PointLightedCube_perFragment.js	/^  Cubetexture.image.onload = function(){ loadTexAndDraw(gl, n, Cubetexture, u_Sampler, u_UseText/;"	f	function:Cubetexture.image
+onload	src/src/main.js	/^  drawer_texture.image.onload = function() {$/;"	f	function:drawer_texture.image
+onload	src/src/main.js	/^  metal_texture.image.onload = function() {$/;"	f	function:metal_texture.image
+onload	src/src/main.js	/^  sofa_texture.image.onload = function() {$/;"	f	function:sofa_texture.image
+onload	src/src/main.js	/^  wood_texture.image.onload = function() {$/;"	f	function:wood_texture.image
 onmousedown	Prac 1/p1/p1-ColoredPoints.js	/^  canvas.onmousedown = function(ev){ click(ev, gl, canvas, a_Position, u_FragColor) };$/;"	f	function:canvas
 ortho	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.ortho = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
 ortho	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.ortho = function(left, right, bottom, top, near, far) {$/;"	m	class:Matrix4
