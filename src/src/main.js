@@ -519,7 +519,7 @@ var g_modelMatrix = new Matrix4(), g_mvpMatrix = new Matrix4();
 function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
   // Clear color and depth buffer
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-  console.log('cleared');
+  // start rendering objects starting from root of scenegraph
   world_node.render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 }
 
