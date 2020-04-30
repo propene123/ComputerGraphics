@@ -585,6 +585,15 @@ bufferSubData	Scene/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	cl
 bufferSubData	View Prac/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bufferSubData	src/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 canvas-element-id	Prac 1/p1/p1-GL_Context.html	/^<canvas id="canvas-element-id" width="800" height="600">$/;"	I
+cei_b_plate	src/src/main.js	/^let cei_b_plate = new Node(0, -8, -2.25, 0, 0, 0);$/;"	v
+cei_b_stalk	src/src/main.js	/^let cei_b_stalk = new Node(0, -2, 0, 0, 0, 0);$/;"	v
+cei_bulb	src/src/main.js	/^let cei_bulb = new Node(0, -2, 0, 0, 0, 0);$/;"	v
+cei_f_plate	src/src/main.js	/^let cei_f_plate = new Node(0, -8, 2.25, 0, 0, 0);$/;"	v
+cei_l_plate	src/src/main.js	/^let cei_l_plate = new Node(-2.25, -8, 0, 0, 0, 0);$/;"	v
+cei_lamp	src/src/main.js	/^let cei_lamp = new Node(0, 65, 0, 0, 0, 0);$/;"	v
+cei_r_plate	src/src/main.js	/^let cei_r_plate = new Node(2.25, -8, 0, 0, 0, 0);$/;"	v
+cei_t_plate	src/src/main.js	/^let cei_t_plate = new Node(0, -0.5, 0, 0, 0, 0);$/;"	v
+cei_t_stalk	src/src/main.js	/^let cei_t_stalk = new Node(0, -4, 0, 0, 0, 0);$/;"	v
 chair1	src/src/main.js	/^let chair1 = new Node(11, 7.5, -10,0,0,0);$/;"	v
 chair1_b_l_leg	src/src/main.js	/^let chair1_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair1_b_r_leg	src/src/main.js	/^let chair1_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
@@ -712,6 +721,7 @@ drawElements	Prac 1/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/
 drawElements	Scene/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	src/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+draw_cei_lamp	src/src/main.js	/^function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_drawers	src/src/main.js	/^function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_fan	src/src/main.js	/^function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
@@ -1254,7 +1264,7 @@ webgl	Scene/lecture6-example/JointModel.html	/^    <canvas id="webgl" width="400
 webgl	Scene/lecture6-example/MultiJointModel.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
 webgl	View Prac/p2/PerspectiveView.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
 webgl	View Prac/p2/PerspectiveView_mvp.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
-webgl	src/src/main.html	/^    <canvas id="webgl" width="1000" height="600">$/;"	I
+webgl	src/src/index.html	/^    <canvas id="webgl" width="1000" height="600">$/;"	I
 wrapEvent	Chair Prac/lib/webgl-debug.js	/^  function wrapEvent(listener) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
 wrapEvent	Prac 1/lib/webgl-debug.js	/^  function wrapEvent(listener) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
 wrapEvent	Scene/lib/webgl-debug.js	/^  function wrapEvent(listener) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext

@@ -245,6 +245,25 @@ let fan_f_blade = new Node(0, 0.25, 5.5, 0, 0, 0);
 fan_f_attach.add_child(fan_f_blade);
 w_node.add_child(fan);
 
+let cei_lamp = new Node(0, 65, 0, 0, 0, 0);
+let cei_t_stalk = new Node(0, -4, 0, 0, 0, 0);
+cei_lamp.add_child(cei_t_stalk);
+let cei_t_plate = new Node(0, -0.5, 0, 0, 0, 0);
+cei_t_stalk.add_child(cei_t_plate);
+let cei_b_stalk = new Node(0, -2, 0, 0, 0, 0);
+cei_t_plate.add_child(cei_b_stalk);
+let cei_bulb = new Node(0, -2, 0, 0, 0, 0);
+cei_b_stalk.add_child(cei_bulb);
+let cei_l_plate = new Node(-2.25, -8, 0, 0, 0, 0);
+let cei_r_plate = new Node(2.25, -8, 0, 0, 0, 0);
+cei_t_plate.add_child(cei_l_plate);
+cei_t_plate.add_child(cei_r_plate);
+let cei_b_plate = new Node(0, -8, -2.25, 0, 0, 0);
+let cei_f_plate = new Node(0, -8, 2.25, 0, 0, 0);
+cei_t_plate.add_child(cei_b_plate);
+cei_t_plate.add_child(cei_f_plate);
+w_node.add_child(cei_lamp);
+
 
 
 
@@ -316,7 +335,7 @@ function main() {
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
   viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
-  //viewProjMatrix.rotate(-90, 0, 1, 0);
+  //viewProjMatrix.rotate(-100, 0, 1, 0);
 
   // Register the event handler to be called on key press
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
@@ -354,6 +373,8 @@ function main() {
   draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
   draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+
+  draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
 
 
@@ -596,6 +617,42 @@ function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
 
 
 }
+
+function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+  let cei_fix_draw = () => {
+    drawBox(gl, n, 3, 2, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let cei_t_stalk_draw = () => {
+    drawBox(gl, n, 0.5, 6, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let cei_t_plate_draw = () => {
+    drawBox(gl, n, 4, 0.5, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix)
+  }
+  let cei_b_stalk_draw = () => {
+    drawBox(gl, n, 0.5, 2, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let cei_bulb_draw = () => {
+    drawBox(gl, n, 2, 2, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let cei_lr_plate = () => {
+    drawBox(gl, n, 0.5, 8, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let cei_bf_plate = () => {
+    drawBox(gl, n, 4, 8, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+
+  cei_lamp.setDraw(cei_fix_draw);
+  cei_t_stalk.setDraw(cei_t_stalk_draw);
+  cei_t_plate.setDraw(cei_t_plate_draw);
+  cei_b_stalk.setDraw(cei_b_stalk_draw);
+  cei_bulb.setDraw(cei_bulb_draw);
+  cei_l_plate.setDraw(cei_lr_plate);
+  cei_r_plate.setDraw(cei_lr_plate);
+  cei_b_plate.setDraw(cei_bf_plate);
+  cei_f_plate.setDraw(cei_bf_plate);
+
+}
+
 
 
 
