@@ -714,6 +714,7 @@ drawElements	src/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	
 draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_drawers	src/src/main.js	/^function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_sofa	src/src/main.js	/^function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
+draw_tv	src/src/main.js	/^function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 drawbox	Chair Prac/p3/chair.js	/^function drawbox(gl, u_ModelMatrix, u_NormalMatrix, n) {$/;"	f
 drawers	src/src/main.js	/^let drawers = new Node(-50, 2, 30, 0, 180, 0);$/;"	v
 drawers_b_panel	src/src/main.js	/^let drawers_b_panel = new Node(0, -2, -7.5, 0, 0, 0);$/;"	v
@@ -1209,6 +1210,13 @@ transpose	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {
 transpose	Scene/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {$/;"	m	class:Matrix4
 transpose	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {$/;"	m	class:Matrix4
 transpose	src/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {$/;"	m	class:Matrix4
+tv	src/src/main.js	/^let tv = new Node(-37,22,30,0,180,0);$/;"	v
+tv_b_bezel	src/src/main.js	/^let tv_b_bezel = new Node(0, -1, 0.25, 0, 0, 0);$/;"	v
+tv_l_bezel	src/src/main.js	/^let tv_l_bezel = new Node(-10.5, 0, 0.25, 0, 0, 0);$/;"	v
+tv_r_bezel	src/src/main.js	/^let tv_r_bezel = new Node(10.5, 0, 0.25, 0, 0, 0);$/;"	v
+tv_stand_plate	src/src/main.js	/^let tv_stand_plate = new Node(0, -1, 0, 0, 0, 0);$/;"	v
+tv_stand_sup	src/src/main.js	/^let tv_stand_sup = new Node(0, -3, 0, 0, 0, 0);$/;"	v
+tv_t_bezel	src/src/main.js	/^let tv_t_bezel = new Node(0, 11.25, 0.25, 0, 0, 0);$/;"	v
 vertexAttribPointer	Chair Prac/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 vertexAttribPointer	Prac 1/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 vertexAttribPointer	Scene/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts

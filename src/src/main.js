@@ -190,6 +190,22 @@ drawers_f_panel.add_child(b_r_drawer);
 w_node.add_child(drawers);
 
 
+let tv = new Node(-37,22,30,0,180,0);
+let tv_l_bezel = new Node(-10.5, 0, 0.25, 0, 0, 0);
+let tv_r_bezel = new Node(10.5, 0, 0.25, 0, 0, 0);
+let tv_b_bezel = new Node(0, -1, 0.25, 0, 0, 0);
+let tv_t_bezel = new Node(0, 11.25, 0.25, 0, 0, 0);
+tv.add_child(tv_l_bezel);
+tv.add_child(tv_r_bezel);
+tv.add_child(tv_b_bezel);
+tv.add_child(tv_t_bezel);
+let tv_stand_sup = new Node(0, -3, 0, 0, 0, 0);
+tv_b_bezel.add_child(tv_stand_sup);
+let tv_stand_plate = new Node(0, -1, 0, 0, 0, 0);
+tv_stand_sup.add_child(tv_stand_plate);
+w_node.add_child(tv);
+
+
 
 // Vertex shader program
 var VSHADER_SOURCE =
@@ -259,7 +275,7 @@ function main() {
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
   viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
-  //viewProjMatrix.rotate(-80, 0, 1, 0);
+  //viewProjMatrix.rotate(-100, 0, 1, 0);
 
   // Register the event handler to be called on key press
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
@@ -291,6 +307,8 @@ function main() {
   draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
   draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+
+  draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
 
 
@@ -427,6 +445,41 @@ function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
   b_r_drawer.setDraw(drawer_panel);
   b_r_drawer_hndl.setDraw(drawer_handle);
 }
+
+
+function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+  let tv_screen = () =>{
+    drawBox(gl, n, 20, 11.25, 1.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let tv_side_bezel = () => {
+    drawBox(gl, n, 1, 11.25, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let tv_top_bezel = () => {
+    drawBox(gl, n, 22, 0.5, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let tv_bottom_bezel = () => {
+    drawBox(gl, n, 22, 1, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let tv_support = () => {
+    drawBox(gl, n, 2, 3, 1.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let tv_plate = () => {
+    drawBox(gl, n, 8, 1, 5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+
+  tv.setDraw(tv_screen);
+  tv_l_bezel.setDraw(tv_side_bezel);
+  tv_r_bezel.setDraw(tv_side_bezel);
+  tv_b_bezel.setDraw(tv_bottom_bezel);
+  tv_t_bezel.setDraw(tv_top_bezel);
+  tv_stand_sup.setDraw(tv_support);
+  tv_stand_plate.setDraw(tv_plate);
+
+
+
+
+}
+
 
 
 //var ANGLE_STEP = 3.0;     // The increments of rotation angle (degrees)
