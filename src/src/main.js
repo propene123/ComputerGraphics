@@ -222,7 +222,7 @@ let shade_l5 = new Node(0, 1, 0, 0, 0, 0);
 shade_l4.add_child(shade_l5);
 w_node.add_child(lamp);
 
-let fan = new Node(50, 0, 0, 0, 0, 0);
+let fan = new Node(-50, 65, 0, 0, 0, 0);
 let fan_spinner = new Node(0, -1, 0, 0, 0, 0);
 fan.add_child(fan_spinner);
 let fan_hold = new Node(0, -3, 0, 0, 0, 0);
@@ -316,7 +316,7 @@ function main() {
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
   viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
-  //viewProjMatrix.rotate(90, 0, 1, 0);
+  //viewProjMatrix.rotate(-90, 0, 1, 0);
 
   // Register the event handler to be called on key press
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
@@ -352,6 +352,8 @@ function main() {
   draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
   draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+
+  draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
 
 
@@ -555,6 +557,42 @@ function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
   shade_l3.setDraw(shade_l3_draw);
   shade_l4.setDraw(shade_l4_draw);
   shade_l5.setDraw(shade_l5_draw);
+}
+
+function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+  let fan_fix_draw = () => {
+    drawBox(gl, n, 2, 3, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let fan_spin_draw = () => {
+    drawBox(gl, n, 0.5, 1, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let fan_holder_draw = () => {
+    drawBox(gl, n, 3, 3, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let fan_lr_attach = () => {
+    drawBox(gl, n, 1, 0.5, 0.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let fan_lr_blade = () => {
+    drawBox(gl, n, 10, 1, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let fan_fb_attach = () => {
+    drawBox(gl, n, 0.5, 0.5, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let fan_fb_blade = () => {
+    drawBox(gl, n, 3, 1, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+
+  fan.setDraw(fan_fix_draw);
+  fan_spinner.setDraw(fan_spin_draw);
+  fan_hold.setDraw(fan_holder_draw);
+  fan_l_attach.setDraw(fan_lr_attach);
+  fan_r_attach.setDraw(fan_lr_attach);
+  fan_l_blade.setDraw(fan_lr_blade);
+  fan_r_blade.setDraw(fan_lr_blade);
+  fan_b_attach.setDraw(fan_fb_attach);
+  fan_f_attach.setDraw(fan_fb_attach);
+  fan_b_blade.setDraw(fan_fb_blade);
+  fan_f_blade.setDraw(fan_fb_blade);
 
 
 }

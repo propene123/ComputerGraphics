@@ -713,6 +713,7 @@ drawElements	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true }
 drawElements	src/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_drawers	src/src/main.js	/^function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
+draw_fan	src/src/main.js	/^function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_lamp	src/src/main.js	/^function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_sofa	src/src/main.js	/^function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_tv	src/src/main.js	/^function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
@@ -738,7 +739,7 @@ enable	Prac 1/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebu
 enable	Scene/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 enable	View Prac/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 enable	src/lib/webgl-debug.js	/^  'enable': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
-fan	src/src/main.js	/^let fan = new Node(50, 0, 0, 0, 0, 0);$/;"	v
+fan	src/src/main.js	/^let fan = new Node(-50, 65, 0, 0, 0, 0);$/;"	v
 fan_b_attach	src/src/main.js	/^let fan_b_attach = new Node(0, 1, -2, 0, 0, 0);$/;"	v
 fan_b_blade	src/src/main.js	/^let fan_b_blade = new Node(0, 0.25, -5.5, 0, 0, 0);$/;"	v
 fan_f_attach	src/src/main.js	/^let fan_f_attach = new Node(0, 1, 2, 0, 0, 0);$/;"	v
