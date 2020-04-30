@@ -138,6 +138,32 @@ w_node.add_child(chair4);
 
 
 
+let sofa = new Node(-50, 2, -30, 0, 20, 0);
+let sofa_b_l_leg = new Node(-19, -2, -6.5, 0, 0, 0);
+let sofa_b_r_leg = new Node(19, -2, -6.5, 0, 0, 0);
+let sofa_f_l_leg = new Node(-19, -2, 6.5, 0, 0, 0);
+let sofa_f_r_leg = new Node(19, -2, 6.5, 0, 0, 0);
+sofa.add_child(sofa_b_l_leg);
+sofa.add_child(sofa_b_r_leg);
+sofa.add_child(sofa_f_l_leg);
+sofa.add_child(sofa_f_r_leg);
+let sofa_m_cushion = new Node(0,6,0,0,0,0);
+let sofa_r_cushion = new Node(13.5,6,0,0,0,0);
+let sofa_l_cushion = new Node(-13.5,6,0,0,0,0);
+sofa.add_child(sofa_m_cushion);
+sofa.add_child(sofa_r_cushion);
+sofa.add_child(sofa_l_cushion);
+let sofa_back = new Node(0, 10, -7.5, -10, 0, 0);
+sofa.add_child(sofa_back);
+let sofa_left_arm = new Node(-20, 10, 0, 0, 0, 0);
+let sofa_right_arm = new Node(20, 10, 0, 0, 0, 0);
+sofa.add_child(sofa_left_arm);
+sofa.add_child(sofa_right_arm);
+w_node.add_child(sofa);
+
+
+
+
 // Vertex shader program
 var VSHADER_SOURCE =
   'attribute vec4 a_Position;\n' +
@@ -206,6 +232,7 @@ function main() {
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
   viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
+  //viewProjMatrix.rotate(80, 0, 1, 0);
 
   // Register the event handler to be called on key press
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
@@ -233,6 +260,8 @@ function main() {
   });
 
   draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+
+  draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
 
 
@@ -296,6 +325,38 @@ function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
   chair4_l_post.setDraw(chair_post);
   chair4_r_post.setDraw(chair_post);
   chair4_back.setDraw(chair_back);
+}
+
+
+function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+  let sofa_base = () => {
+    drawBox(gl, n, 40, 6, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let sofa_leg = () => {
+    drawBox(gl, n, 2, 2, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let sofa_back_draw = () => {
+    drawBox(gl, n, 40, 16, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let sofa_arm = () => {
+    drawBox(gl, n, 4, 6, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let sofa_cushion = () => {
+    drawBox(gl, n, 13, 4, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  
+  sofa.setDraw(sofa_base);
+  sofa_b_l_leg.setDraw(sofa_leg);
+  sofa_b_r_leg.setDraw(sofa_leg);
+  sofa_f_l_leg.setDraw(sofa_leg);
+  sofa_f_r_leg.setDraw(sofa_leg);
+  sofa_m_cushion.setDraw(sofa_cushion);
+  sofa_r_cushion.setDraw(sofa_cushion);
+  sofa_l_cushion.setDraw(sofa_cushion);
+  sofa_back.setDraw(sofa_back_draw);
+  sofa_left_arm.setDraw(sofa_arm);
+  sofa_right_arm.setDraw(sofa_arm);
+
 }
 
 

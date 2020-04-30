@@ -708,6 +708,7 @@ drawElements	Scene/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;
 drawElements	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	src/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
+draw_sofa	src/src/main.js	/^function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 drawbox	Chair Prac/p3/chair.js	/^function drawbox(gl, u_ModelMatrix, u_NormalMatrix, n) {$/;"	f
 dropShadow	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
 dropShadow	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
@@ -1123,6 +1124,17 @@ setupWebGL	Prac 1/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_att
 setupWebGL	Scene/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_attribs, opt_onError) {$/;"	f	function:WebGLUtils
 setupWebGL	View Prac/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_attribs, opt_onError) {$/;"	f	function:WebGLUtils
 setupWebGL	src/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_attribs, opt_onError) {$/;"	f	function:WebGLUtils
+sofa	src/src/main.js	/^let sofa = new Node(-50, 2, -30, 0, 20, 0);$/;"	v
+sofa_b_l_leg	src/src/main.js	/^let sofa_b_l_leg = new Node(-19, -2, -6.5, 0, 0, 0);$/;"	v
+sofa_b_r_leg	src/src/main.js	/^let sofa_b_r_leg = new Node(19, -2, -6.5, 0, 0, 0);$/;"	v
+sofa_back	src/src/main.js	/^let sofa_back = new Node(0, 10, -7.5, -10, 0, 0);$/;"	v
+sofa_f_l_leg	src/src/main.js	/^let sofa_f_l_leg = new Node(-19, -2, 6.5, 0, 0, 0);$/;"	v
+sofa_f_r_leg	src/src/main.js	/^let sofa_f_r_leg = new Node(19, -2, 6.5, 0, 0, 0);$/;"	v
+sofa_l_cushion	src/src/main.js	/^let sofa_l_cushion = new Node(-13.5,6,0,0,0,0);$/;"	v
+sofa_left_arm	src/src/main.js	/^let sofa_left_arm = new Node(-20, 10, 0, 0, 0, 0);$/;"	v
+sofa_m_cushion	src/src/main.js	/^let sofa_m_cushion = new Node(0,6,0,0,0,0);$/;"	v
+sofa_r_cushion	src/src/main.js	/^let sofa_r_cushion = new Node(13.5,6,0,0,0,0);$/;"	v
+sofa_right_arm	src/src/main.js	/^let sofa_right_arm = new Node(20, 10, 0, 0, 0, 0);$/;"	v
 stencilFunc	Chair Prac/lib/webgl-debug.js	/^  'stencilFunc': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 stencilFunc	Prac 1/lib/webgl-debug.js	/^  'stencilFunc': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 stencilFunc	Scene/lib/webgl-debug.js	/^  'stencilFunc': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
