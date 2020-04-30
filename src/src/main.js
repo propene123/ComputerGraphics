@@ -1,5 +1,4 @@
-// MultiJointModel.js (c) 2012 matsuda and itami
-
+// Node class for the scenegraph
 class Node {
   constructor(x, y, z, x_rot, y_rot, z_rot) {
     this._x = x;
@@ -161,6 +160,34 @@ sofa.add_child(sofa_left_arm);
 sofa.add_child(sofa_right_arm);
 w_node.add_child(sofa);
 
+let drawers = new Node(-50, 2, 30, 0, 180, 0);
+let drawers_l_panel = new Node(-18.5, -2, 0, 0, 0, 0);
+let drawers_r_panel = new Node(18.5, -2, 0, 0, 0, 0);
+drawers.add_child(drawers_l_panel);
+drawers.add_child(drawers_r_panel);
+let drawers_b_panel = new Node(0, -2, -7.5, 0, 0, 0);
+drawers.add_child(drawers_b_panel);
+let drawers_t_panel = new Node(0, 13, 0, 0, 0, 0);
+drawers.add_child(drawers_t_panel);
+let drawers_f_panel = new Node(0, 2, 5.5, 0, 0, 0);
+drawers.add_child(drawers_f_panel);
+let t_l_drawer = new Node(-9.5, 7, 1.5, 0, 0, 0);
+let t_l_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);
+t_l_drawer.add_child(t_l_drawer_hndl);
+drawers_f_panel.add_child(t_l_drawer);
+let t_r_drawer = new Node(9.5, 7, 1.5, 0, 0, 0);
+let t_r_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);
+t_r_drawer.add_child(t_r_drawer_hndl);
+drawers_f_panel.add_child(t_r_drawer);
+let b_l_drawer = new Node(-9.5, 1, 1.5, 0, 0, 0);
+let b_l_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);
+b_l_drawer.add_child(b_l_drawer_hndl);
+drawers_f_panel.add_child(b_l_drawer);
+let b_r_drawer = new Node(9.5, 1, 1.5, 0, 0, 0);
+let b_r_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);
+b_r_drawer.add_child(b_r_drawer_hndl);
+drawers_f_panel.add_child(b_r_drawer);
+w_node.add_child(drawers);
 
 
 
@@ -232,7 +259,7 @@ function main() {
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
   viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
-  //viewProjMatrix.rotate(80, 0, 1, 0);
+  //viewProjMatrix.rotate(-80, 0, 1, 0);
 
   // Register the event handler to be called on key press
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
@@ -262,6 +289,8 @@ function main() {
   draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
   draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+
+  draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
 
 
@@ -357,6 +386,46 @@ function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
   sofa_left_arm.setDraw(sofa_arm);
   sofa_right_arm.setDraw(sofa_arm);
 
+}
+
+
+function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+  let drawers_base = () => {
+    drawBox(gl, n, 35, 2, 13, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let drawers_side = () => {
+    drawBox(gl, n, 2, 15, 13, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let drawers_back = () => {
+    drawBox(gl, n, 39, 17, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let drawers_top = () => {
+    drawBox(gl, n, 39, 2, 14, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let drawers_front = () => {
+    drawBox(gl, n, 35, 13, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let drawer_panel = () => {
+    drawBox(gl, n, 15, 4, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let drawer_handle = () => {
+    drawBox(gl, n, 3, 1, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+
+  drawers.setDraw(drawers_base);
+  drawers_l_panel.setDraw(drawers_side);
+  drawers_r_panel.setDraw(drawers_side);
+  drawers_b_panel.setDraw(drawers_back);
+  drawers_t_panel.setDraw(drawers_top);
+  drawers_f_panel.setDraw(drawers_front);
+  t_l_drawer.setDraw(drawer_panel);
+  t_l_drawer_hndl.setDraw(drawer_handle);
+  t_r_drawer.setDraw(drawer_panel);
+  t_r_drawer_hndl.setDraw(drawer_handle);
+  b_l_drawer.setDraw(drawer_panel);
+  b_l_drawer_hndl.setDraw(drawer_handle);
+  b_r_drawer.setDraw(drawer_panel);
+  b_r_drawer_hndl.setDraw(drawer_handle);
 }
 
 

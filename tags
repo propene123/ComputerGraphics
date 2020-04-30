@@ -529,6 +529,10 @@ activeTexture	Scene/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	cl
 activeTexture	View Prac/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 activeTexture	src/lib/webgl-debug.js	/^  'activeTexture': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 add_child	src/src/main.js	/^  add_child(node){$/;"	m	class:Node
+b_l_drawer	src/src/main.js	/^let b_l_drawer = new Node(-9.5, 1, 1.5, 0, 0, 0);$/;"	v
+b_l_drawer_hndl	src/src/main.js	/^let b_l_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);$/;"	v
+b_r_drawer	src/src/main.js	/^let b_r_drawer = new Node(9.5, 1, 1.5, 0, 0, 0);$/;"	v
+b_r_drawer_hndl	src/src/main.js	/^let b_r_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);$/;"	v
 bindBuffer	Chair Prac/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bindBuffer	Prac 1/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bindBuffer	Scene/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -708,8 +712,15 @@ drawElements	Scene/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;
 drawElements	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	src/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
+draw_drawers	src/src/main.js	/^function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_sofa	src/src/main.js	/^function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 drawbox	Chair Prac/p3/chair.js	/^function drawbox(gl, u_ModelMatrix, u_NormalMatrix, n) {$/;"	f
+drawers	src/src/main.js	/^let drawers = new Node(-50, 2, 30, 0, 180, 0);$/;"	v
+drawers_b_panel	src/src/main.js	/^let drawers_b_panel = new Node(0, -2, -7.5, 0, 0, 0);$/;"	v
+drawers_f_panel	src/src/main.js	/^let drawers_f_panel = new Node(0, 2, 5.5, 0, 0, 0);$/;"	v
+drawers_l_panel	src/src/main.js	/^let drawers_l_panel = new Node(-18.5, -2, 0, 0, 0, 0);$/;"	v
+drawers_r_panel	src/src/main.js	/^let drawers_r_panel = new Node(18.5, -2, 0, 0, 0, 0);$/;"	v
+drawers_t_panel	src/src/main.js	/^let drawers_t_panel = new Node(0, 13, 0, 0, 0, 0);$/;"	v
 dropShadow	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
 dropShadow	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
 dropShadow	Scene/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
@@ -1160,6 +1171,10 @@ stencilOpSeparate	Prac 1/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1
 stencilOpSeparate	Scene/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 stencilOpSeparate	View Prac/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 stencilOpSeparate	src/lib/webgl-debug.js	/^  'stencilOpSeparate': { 0:true, 1:true, 2:true, 3:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+t_l_drawer	src/src/main.js	/^let t_l_drawer = new Node(-9.5, 7, 1.5, 0, 0, 0);$/;"	v
+t_l_drawer_hndl	src/src/main.js	/^let t_l_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);$/;"	v
+t_r_drawer	src/src/main.js	/^let t_r_drawer = new Node(9.5, 7, 1.5, 0, 0, 0);$/;"	v
+t_r_drawer_hndl	src/src/main.js	/^let t_r_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);$/;"	v
 table	src/src/main.js	/^let table = new Node(0, 0, 0, 0, 0, 0);$/;"	v
 table_base	src/src/main.js	/^let table_base = new Node(0, 0, 0, 0, 0, 0);$/;"	v
 table_l_panel	src/src/main.js	/^let table_l_panel = new Node(-10, 13, 0, 0, 0, 0);$/;"	v
