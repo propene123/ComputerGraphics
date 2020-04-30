@@ -737,7 +737,6 @@ b_l_drawer	src/src/main.js	/^let b_l_drawer = new Node(-9.5, 1, 1.5, 0, 0, 0);$/
 b_l_drawer_hndl	src/src/main.js	/^let b_l_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);$/;"	v
 b_r_drawer	src/src/main.js	/^let b_r_drawer = new Node(9.5, 1, 1.5, 0, 0, 0);$/;"	v
 b_r_drawer_hndl	src/src/main.js	/^let b_r_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);$/;"	v
-back_wall	src/src/main.js	/^let back_wall = new Node(0, 0, -250, 0, 0, 0);$/;"	v
 bindBuffer	Chair Prac/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bindBuffer	Prac 1/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bindBuffer	Scene/lib/webgl-debug.js	/^  'bindBuffer': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -987,7 +986,7 @@ draw_lamp	src/src/main.js	/^function draw_lamp(gl, n, viewProjMatrix, u_MvpMatri
 draw_sofa	src/src/main.js	/^function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, /;"	f
 draw_tv	src/src/main.js	/^function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_/;"	f
 drawbox	Chair Prac/p3/chair.js	/^function drawbox(gl, u_ModelMatrix, u_NormalMatrix, n) {$/;"	f
-drawers	src/src/main.js	/^let drawers = new Node(-50, 2, 30, 0, 180, 0);$/;"	v
+drawers	src/src/main.js	/^let drawers = new Node(-50, 2, 41.5, 0, 180, 0);$/;"	v
 drawers_b_panel	src/src/main.js	/^let drawers_b_panel = new Node(0, -2, -7.5, 0, 0, 0);$/;"	v
 drawers_f_panel	src/src/main.js	/^let drawers_f_panel = new Node(0, 2, 5.5, 0, 0, 0);$/;"	v
 drawers_l_panel	src/src/main.js	/^let drawers_l_panel = new Node(-18.5, -2, 0, 0, 0, 0);$/;"	v
@@ -1025,7 +1024,7 @@ fan_l_blade	src/src/main.js	/^let fan_l_blade = new Node(-5.5, 0.25, 0, 0, 0, 0)
 fan_r_attach	src/src/main.js	/^let fan_r_attach = new Node(2, 1, 0, 0, 0, 0);$/;"	v
 fan_r_blade	src/src/main.js	/^let fan_r_blade = new Node(5.5, 0.25, 0, 0, 0, 0);$/;"	v
 fan_spinner	src/src/main.js	/^let fan_spinner = new Node(0, -1, 0, 0, 0, 0);$/;"	v
-floor	src/src/main.js	/^let floor = new Node(0, 0, 0, 0, 0, 0);$/;"	v
+floor	src/src/main.js	/^let floor = new Node(-15, 0, 0, 0, 0, 0);$/;"	v
 framebufferRenderbuffer	Chair Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 framebufferRenderbuffer	Prac 1/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 framebufferRenderbuffer	Scene/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -1278,7 +1277,7 @@ keydown	Chair Prac/p3/chair.js	/^function keydown(ev, gl, u_ModelMatrix, u_Norma
 keydown	Scene/lecture6-example/JointModel.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
 keydown	Scene/lecture6-example/MultiJointModel.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
 keydown	src/src/main.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {$/;"	f
-lamp	src/src/main.js	/^let lamp = new Node(-65, 17, 30, 0, 0, 0);$/;"	v
+lamp	src/src/main.js	/^let lamp = new Node(-65, 17, 41.5, 0, 0, 0);$/;"	v
 lamp_light	src/src/main.js	/^let lamp_light = new Node(0, 4, 0, 0, 0, 0);$/;"	v
 lamp_stand	src/src/main.js	/^let lamp_stand = new Node(0, 4, 0, 0, 0, 0);$/;"	v
 loadFileAJAX	Chair Prac/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
@@ -1492,6 +1491,7 @@ restoreContext	Tex Mapping/lecture8-example/lib/webgl-debug.js	/^  wrapper_.rest
 restoreContext	Tex Mapping/lib/webgl-debug.js	/^  wrapper_.restoreContext = function() {$/;"	f	function:wrapper_
 restoreContext	View Prac/lib/webgl-debug.js	/^  wrapper_.restoreContext = function() {$/;"	f	function:wrapper_
 restoreContext	src/lib/webgl-debug.js	/^  wrapper_.restoreContext = function() {$/;"	f	function:wrapper_
+roof	src/src/main.js	/^let roof = new Node(0, 68, 0, 0, 0, 0);$/;"	v
 rotate	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.rotate = function(angle, x, y, z) {$/;"	m	class:Matrix4
 rotate	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.rotate = function(angle, x, y, z) {$/;"	m	class:Matrix4
 rotate	Scene/lib/cuon-matrix.js	/^Matrix4.prototype.rotate = function(angle, x, y, z) {$/;"	m	class:Matrix4
@@ -1678,7 +1678,7 @@ transpose	Tex Mapping/lecture8-example/lib/cuon-matrix.js	/^Matrix4.prototype.tr
 transpose	Tex Mapping/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {$/;"	m	class:Matrix4
 transpose	View Prac/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {$/;"	m	class:Matrix4
 transpose	src/lib/cuon-matrix.js	/^Matrix4.prototype.transpose = function() {$/;"	m	class:Matrix4
-tv	src/src/main.js	/^let tv = new Node(-37,22,30,0,180,0);$/;"	v
+tv	src/src/main.js	/^let tv = new Node(-37,22,41.5,0,180,0);$/;"	v
 tv_b_bezel	src/src/main.js	/^let tv_b_bezel = new Node(0, -1, 0.25, 0, 0, 0);$/;"	v
 tv_l_bezel	src/src/main.js	/^let tv_l_bezel = new Node(-10.5, 0, 0.25, 0, 0, 0);$/;"	v
 tv_r_bezel	src/src/main.js	/^let tv_r_bezel = new Node(10.5, 0, 0.25, 0, 0, 0);$/;"	v
@@ -1694,6 +1694,8 @@ vertexAttribPointer	View Prac/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:
 vertexAttribPointer	src/lib/webgl-debug.js	/^  'vertexAttribPointer': { 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 viewMatrix	Chair Prac/p3/chair.js	/^var viewMatrix = new Matrix4();  \/\/ The view matrix$/;"	v
 w_node	src/src/main.js	/^let w_node = new Node(0, 0, 0, 0, 0, 0);$/;"	v
+wall_1	src/src/main.js	/^let wall_1 = new Node(-60.5, 0, 0, 0, 0, 0);$/;"	v
+wall_2	src/src/main.js	/^let wall_2 = new Node(0, 0, 50.5, 0, 0, 0);$/;"	v
 webgl	Chair Prac/p3/chair.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
 webgl	Prac 1/p1/HelloTriangle.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I
 webgl	Prac 1/p1/p1-ColoredPoints.html	/^    <canvas id="webgl" width="400" height="400">$/;"	I

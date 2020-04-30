@@ -44,10 +44,15 @@ class Node {
 
 
 let w_node = new Node(0, 0, 0, 0, 0, 0);
-let floor = new Node(0, 0, 0, 0, 0, 0);
+let floor = new Node(-15, 0, 0, 0, 0, 0);
+let wall_1 = new Node(-60.5, 0, 0, 0, 0, 0);
+let wall_2 = new Node(0, 0, 50.5, 0, 0, 0);
+let roof = new Node(0, 68, 0, 0, 0, 0);
+floor.add_child(wall_1);
+floor.add_child(wall_2);
+floor.add_child(roof);
 w_node.add_child(floor);
-let back_wall = new Node(0, 0, -250, 0, 0, 0);
-w_node.add_child(back_wall);
+
 
 
 
@@ -160,7 +165,7 @@ sofa.add_child(sofa_left_arm);
 sofa.add_child(sofa_right_arm);
 w_node.add_child(sofa);
 
-let drawers = new Node(-50, 2, 30, 0, 180, 0);
+let drawers = new Node(-50, 2, 41.5, 0, 180, 0);
 let drawers_l_panel = new Node(-18.5, -2, 0, 0, 0, 0);
 let drawers_r_panel = new Node(18.5, -2, 0, 0, 0, 0);
 drawers.add_child(drawers_l_panel);
@@ -190,7 +195,7 @@ drawers_f_panel.add_child(b_r_drawer);
 w_node.add_child(drawers);
 
 
-let tv = new Node(-37,22,30,0,180,0);
+let tv = new Node(-37,22,41.5,0,180,0);
 let tv_l_bezel = new Node(-10.5, 0, 0.25, 0, 0, 0);
 let tv_r_bezel = new Node(10.5, 0, 0.25, 0, 0, 0);
 let tv_b_bezel = new Node(0, -1, 0.25, 0, 0, 0);
@@ -205,7 +210,7 @@ let tv_stand_plate = new Node(0, -1, 0, 0, 0, 0);
 tv_stand_sup.add_child(tv_stand_plate);
 w_node.add_child(tv);
 
-let lamp = new Node(-65, 17, 30, 0, 0, 0);
+let lamp = new Node(-65, 17, 41.5, 0, 0, 0);
 let lamp_stand = new Node(0, 4, 0, 0, 0, 0);
 lamp.add_child(lamp_stand);
 let lamp_light = new Node(0, 4, 0, 0, 0, 0);
@@ -353,12 +358,14 @@ function main() {
      console.log('Failed to get the storage location');
      return;
    }
-  // Set the light color (white)
-  gl.uniform3f(u_LightColor, 1.0, 1.0, 1.0);
-  // Set the light direction (in the world coordinate)
-  gl.uniform3f(u_LightPosition, 2.3, 4.0, 3.5);
+  // set colour of point light hanging from ceiling
+  gl.uniform3f(u_LightColor, 0.98, 0.93, 0.64);
+  // set point light pos to a nice position
+  // this is not the position of the lamp model as the shadows caset from there look ugly
+  gl.uniform3f(u_LightPosition, 2, 5, 2);
   // Set the ambient light
-  gl.uniform3f(u_AmbientLight, 0.2, 0.2, 0.2);
+  gl.uniform3f(u_AmbientLight, 0.3, 0.3, 0.3);
+  // set default colour
   gl.uniform4f(u_BoxColor, 1.0, 0.4,0.0,1.0);
   // Calculate the view projection matrix
   var viewProjMatrix = new Matrix4();
@@ -390,26 +397,27 @@ function main() {
   
 
 
-  //floor.setDraw(() => {
-    //drawBox(gl, n, 500, -1, 500, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-  //});
-
-  //back_wall.setDraw(() => {
-    //drawBox(gl, n, 500, 500, -1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-  //});
-
-
-  // geometry for table base
-
-
-
-
-
-
-
+  floor.setDraw(() => {
+    drawBox(gl, n, 120, -1, 100, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.44, 0.5, 0.56, 1, u_BoxColor);
+  });
+  wall_1.setDraw(() => {
+    drawBox(gl, n, 1, 69, 100, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.9, 0.9, 0.9, 1, u_BoxColor)
+  });
+  wall_2.setDraw(() => {
+    drawBox(gl, n, 120, 69, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.9, 0.9, 0.9, 1, u_BoxColor)
+  });
+  roof.setDraw(() => {
+    drawBox(gl, n, 120, 1, 100, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.9, 0.9, 0.9, 1, u_BoxColor)
+  });
 
   //This is where we render world
 　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
+
+  window.setInterval(() => {
+    fan_spinner._y_rot = (fan_spinner._y_rot - 3) % 360;
+  　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
+  }, 0.1)
+
 }
 
 
@@ -683,12 +691,16 @@ function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, 
 
 function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
   switch(ev.keyCode){
-    case 37:
-      fan_spinner._y_rot = (fan_spinner._y_rot - 3) %360;
-      draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
+    case 65:
+      viewProjMatrix.rotate(3,0,1,0);
+      break;
+    case 68:
+      viewProjMatrix.rotate(-3,0,1,0);
+      break;
+    default:
       return;
   }
-  //draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
+  draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
 }
 
 function initVertexBuffers(gl) {
