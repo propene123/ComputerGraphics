@@ -18,12 +18,12 @@ class Node {
 
   render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {
     pushMatrix(g_modelMatrix)
-      g_modelMatrix.setTranslate(this._x, this._y, this._z);
+      g_modelMatrix.translate(this._x, this._y, this._z);
       g_modelMatrix.rotate(this._x_rot, 1.0, 0.0, 0.0);
       g_modelMatrix.rotate(this._y_rot, 0.0, 1.0, 0.0);
       g_modelMatrix.rotate(this._z_rot, 0.0, 0.0, 1.0);
         pushMatrix(g_modelMatrix)
-          this.draw(viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+          this.draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
         g_modelMatrix = popMatrix();
       for(n of this._children){
         n.render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
@@ -41,8 +41,6 @@ class Node {
   setDraw(func){
     this.draw = func;
   }
-
-  
 }
 
 
@@ -51,6 +49,9 @@ let w_node = new Node(0, 0, 0, 0, 0, 0);
 //w_node.add_child(floor);
 //let back_wall = new Node(0, 0, -250, 0, 0, 0);
 //w_node.add_child(back_wall);
+
+
+
 let table = new Node(0, 0, 0, 0, 0, 0);
 w_node.add_child(table);
 let table_base = new Node(0, 0, 0, 0, 0, 0);
@@ -61,7 +62,79 @@ let table_l_panel = new Node(-10, 13, 0, 0, 0, 0);
 table_base.add_child(table_l_panel);
 
 
+let chair1 = new Node(11, 7.5, -10,0,0,0);
+let chair1_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);
+let chair1_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);
+let chair1_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);
+let chair1_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);
+chair1.add_child(chair1_b_l_leg);
+chair1.add_child(chair1_b_r_leg);
+chair1.add_child(chair1_f_l_leg);
+chair1.add_child(chair1_f_r_leg);
+let chair1_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);
+let chair1_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);
+chair1.add_child(chair1_l_post);
+chair1.add_child(chair1_r_post);
+let chair1_back = new Node(4.5, 5, 0, 0, 0, 0);
+chair1_l_post.add_child(chair1_back);
+w_node.add_child(chair1);
 
+
+
+let chair2 = new Node(-11, 7.5, -10,0,10,0);
+let chair2_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);
+let chair2_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);
+let chair2_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);
+let chair2_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);
+chair2.add_child(chair2_b_l_leg);
+chair2.add_child(chair2_b_r_leg);
+chair2.add_child(chair2_f_l_leg);
+chair2.add_child(chair2_f_r_leg);
+let chair2_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);
+let chair2_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);
+chair2.add_child(chair2_l_post);
+chair2.add_child(chair2_r_post);
+let chair2_back = new Node(4.5, 5, 0, 0, 0, 0);
+chair2_l_post.add_child(chair2_back);
+w_node.add_child(chair2);
+
+
+
+let chair3 = new Node(15, 7.5, 10,0,180,0);
+let chair3_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);
+let chair3_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);
+let chair3_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);
+let chair3_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);
+chair3.add_child(chair3_b_l_leg);
+chair3.add_child(chair3_b_r_leg);
+chair3.add_child(chair3_f_l_leg);
+chair3.add_child(chair3_f_r_leg);
+let chair3_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);
+let chair3_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);
+chair3.add_child(chair3_l_post);
+chair3.add_child(chair3_r_post);
+let chair3_back = new Node(4.5, 5, 0, 0, 0, 0);
+chair3_l_post.add_child(chair3_back);
+w_node.add_child(chair3);
+
+
+
+let chair4 = new Node(-10, 7.5, 10,0,190,0);
+let chair4_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);
+let chair4_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);
+let chair4_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);
+let chair4_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);
+chair4.add_child(chair4_b_l_leg);
+chair4.add_child(chair4_b_r_leg);
+chair4.add_child(chair4_f_l_leg);
+chair4.add_child(chair4_f_r_leg);
+let chair4_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);
+let chair4_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);
+chair4.add_child(chair4_l_post);
+chair4.add_child(chair4_r_post);
+let chair4_back = new Node(4.5, 5, 0, 0, 0, 0);
+chair4_l_post.add_child(chair4_back);
+w_node.add_child(chair4);
 
 
 
@@ -148,6 +221,9 @@ function main() {
 
 
   // geometry for table base
+  table_l_panel.setDraw(() => {
+    drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  });
   table_base.setDraw(()=> {
     drawBox(gl, n, 5, 15, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
   });
@@ -156,20 +232,72 @@ function main() {
     drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
   });
 
-
-  table_l_panel.setDraw(() => {
-    drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
-  });
+  draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
 
 
 
 
-  
 
   //This is where we render world
 　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
 }
+
+
+function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+  let chair_base = () => {
+    drawBox(gl, n, 10, 2, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let chair_leg = () => {
+    drawBox(gl, n, 1, 7.5, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let chair_post = () => {
+    drawBox(gl, n, 1, 10, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let chair_back = () => {
+    drawBox(gl, n, 8, 3, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix)
+  };
+
+  chair1.setDraw(chair_base);
+  chair1_b_l_leg.setDraw(chair_leg);
+  chair1_b_r_leg.setDraw(chair_leg);
+  chair1_f_l_leg.setDraw(chair_leg);
+  chair1_f_r_leg.setDraw(chair_leg);
+  chair1_l_post.setDraw(chair_post);
+  chair1_r_post.setDraw(chair_post);
+  chair1_back.setDraw(chair_back);
+
+
+  chair2.setDraw(chair_base);
+  chair2_b_l_leg.setDraw(chair_leg);
+  chair2_b_r_leg.setDraw(chair_leg);
+  chair2_f_l_leg.setDraw(chair_leg);
+  chair2_f_r_leg.setDraw(chair_leg);
+  chair2_l_post.setDraw(chair_post);
+  chair2_r_post.setDraw(chair_post);
+  chair2_back.setDraw(chair_back);
+
+
+  chair3.setDraw(chair_base);
+  chair3_b_l_leg.setDraw(chair_leg);
+  chair3_b_r_leg.setDraw(chair_leg);
+  chair3_f_l_leg.setDraw(chair_leg);
+  chair3_f_r_leg.setDraw(chair_leg);
+  chair3_l_post.setDraw(chair_post);
+  chair3_r_post.setDraw(chair_post);
+  chair3_back.setDraw(chair_back);
+
+
+  chair4.setDraw(chair_base);
+  chair4_b_l_leg.setDraw(chair_leg);
+  chair4_b_r_leg.setDraw(chair_leg);
+  chair4_f_l_leg.setDraw(chair_leg);
+  chair4_f_r_leg.setDraw(chair_leg);
+  chair4_l_post.setDraw(chair_post);
+  chair4_r_post.setDraw(chair_post);
+  chair4_back.setDraw(chair_back);
+}
+
 
 //var ANGLE_STEP = 3.0;     // The increments of rotation angle (degrees)
 //var g_arm1Angle = 90.0;   // The rotation angle of arm1 (degrees)
@@ -261,6 +389,7 @@ var g_modelMatrix = new Matrix4(), g_mvpMatrix = new Matrix4();
 function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
   // Clear color and depth buffer
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  console.log('cleared');
   world_node.render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 }
 
@@ -278,7 +407,6 @@ var g_normalMatrix = new Matrix4();  // Coordinate transformation matrix for nor
 
 // Draw rectangular solid
 function drawBox(gl, n, width, height, depth, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {
-  //pushMatrix(g_modelMatrix);   // Save the model matrix
     // Scale a cube and draw
     g_modelMatrix.scale(width, height, depth);
     // Calculate the model view project matrix and pass it to u_MvpMatrix
@@ -291,5 +419,4 @@ function drawBox(gl, n, width, height, depth, viewProjMatrix, u_MvpMatrix, u_Nor
     gl.uniformMatrix4fv(u_NormalMatrix, false, g_normalMatrix.elements);
     // Draw
     gl.drawElements(gl.TRIANGLES, n, gl.UNSIGNED_BYTE, 0);
-  //g_modelMatrix = popMatrix();   // Retrieve the model matrix
 }

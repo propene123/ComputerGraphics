@@ -580,6 +580,38 @@ bufferSubData	Scene/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	cl
 bufferSubData	View Prac/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 bufferSubData	src/lib/webgl-debug.js	/^  'bufferSubData': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 canvas-element-id	Prac 1/p1/p1-GL_Context.html	/^<canvas id="canvas-element-id" width="800" height="600">$/;"	I
+chair1	src/src/main.js	/^let chair1 = new Node(11, 7.5, -10,0,0,0);$/;"	v
+chair1_b_l_leg	src/src/main.js	/^let chair1_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
+chair1_b_r_leg	src/src/main.js	/^let chair1_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
+chair1_back	src/src/main.js	/^let chair1_back = new Node(4.5, 5, 0, 0, 0, 0);$/;"	v
+chair1_f_l_leg	src/src/main.js	/^let chair1_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);$/;"	v
+chair1_f_r_leg	src/src/main.js	/^let chair1_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);$/;"	v
+chair1_l_post	src/src/main.js	/^let chair1_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);$/;"	v
+chair1_r_post	src/src/main.js	/^let chair1_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);$/;"	v
+chair2	src/src/main.js	/^let chair2 = new Node(-11, 7.5, -10,0,10,0);$/;"	v
+chair2_b_l_leg	src/src/main.js	/^let chair2_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
+chair2_b_r_leg	src/src/main.js	/^let chair2_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
+chair2_back	src/src/main.js	/^let chair2_back = new Node(4.5, 5, 0, 0, 0, 0);$/;"	v
+chair2_f_l_leg	src/src/main.js	/^let chair2_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);$/;"	v
+chair2_f_r_leg	src/src/main.js	/^let chair2_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);$/;"	v
+chair2_l_post	src/src/main.js	/^let chair2_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);$/;"	v
+chair2_r_post	src/src/main.js	/^let chair2_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);$/;"	v
+chair3	src/src/main.js	/^let chair3 = new Node(15, 7.5, 10,0,180,0);$/;"	v
+chair3_b_l_leg	src/src/main.js	/^let chair3_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
+chair3_b_r_leg	src/src/main.js	/^let chair3_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
+chair3_back	src/src/main.js	/^let chair3_back = new Node(4.5, 5, 0, 0, 0, 0);$/;"	v
+chair3_f_l_leg	src/src/main.js	/^let chair3_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);$/;"	v
+chair3_f_r_leg	src/src/main.js	/^let chair3_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);$/;"	v
+chair3_l_post	src/src/main.js	/^let chair3_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);$/;"	v
+chair3_r_post	src/src/main.js	/^let chair3_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);$/;"	v
+chair4	src/src/main.js	/^let chair4 = new Node(-10, 7.5, 10,0,190,0);$/;"	v
+chair4_b_l_leg	src/src/main.js	/^let chair4_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
+chair4_b_r_leg	src/src/main.js	/^let chair4_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
+chair4_back	src/src/main.js	/^let chair4_back = new Node(4.5, 5, 0, 0, 0, 0);$/;"	v
+chair4_f_l_leg	src/src/main.js	/^let chair4_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);$/;"	v
+chair4_f_r_leg	src/src/main.js	/^let chair4_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);$/;"	v
+chair4_l_post	src/src/main.js	/^let chair4_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);$/;"	v
+chair4_r_post	src/src/main.js	/^let chair4_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);$/;"	v
 checkFramebufferStatus	Chair Prac/lib/webgl-debug.js	/^  'checkFramebufferStatus': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 checkFramebufferStatus	Chair Prac/lib/webgl-debug.js	/^  wrapper_.checkFramebufferStatus = function(f) {$/;"	f	function:wrapper_
 checkFramebufferStatus	Prac 1/lib/webgl-debug.js	/^  'checkFramebufferStatus': { 0:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -675,6 +707,7 @@ drawElements	Prac 1/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/
 drawElements	Scene/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 drawElements	src/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
+draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 drawbox	Chair Prac/p3/chair.js	/^function drawbox(gl, u_ModelMatrix, u_NormalMatrix, n) {$/;"	f
 dropShadow	Chair Prac/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
 dropShadow	Prac 1/lib/cuon-matrix.js	/^Matrix4.prototype.dropShadow = function(plane, light) {$/;"	m	class:Matrix4
