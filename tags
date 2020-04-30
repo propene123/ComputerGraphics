@@ -713,6 +713,7 @@ drawElements	View Prac/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true }
 drawElements	src/lib/webgl-debug.js	/^  'drawElements': { 0:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 draw_chairs	src/src/main.js	/^function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_drawers	src/src/main.js	/^function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
+draw_lamp	src/src/main.js	/^function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_sofa	src/src/main.js	/^function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 draw_tv	src/src/main.js	/^function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){$/;"	f
 drawbox	Chair Prac/p3/chair.js	/^function drawbox(gl, u_ModelMatrix, u_NormalMatrix, n) {$/;"	f
@@ -923,6 +924,9 @@ keydown	Chair Prac/p3/chair.js	/^function keydown(ev, gl, u_ModelMatrix, u_Norma
 keydown	Scene/lecture6-example/JointModel.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
 keydown	Scene/lecture6-example/MultiJointModel.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
 keydown	src/src/main.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {$/;"	f
+lamp	src/src/main.js	/^let lamp = new Node(-65, 17, 30, 0, 0, 0);$/;"	v
+lamp_light	src/src/main.js	/^let lamp_light = new Node(0, 4, 0, 0, 0, 0);$/;"	v
+lamp_stand	src/src/main.js	/^let lamp_stand = new Node(0, 4, 0, 0, 0, 0);$/;"	v
 loadFileAJAX	Chair Prac/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
 loadFileAJAX	Prac 1/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
 loadFileAJAX	Scene/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
@@ -1136,6 +1140,11 @@ setupWebGL	Prac 1/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_att
 setupWebGL	Scene/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_attribs, opt_onError) {$/;"	f	function:WebGLUtils
 setupWebGL	View Prac/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_attribs, opt_onError) {$/;"	f	function:WebGLUtils
 setupWebGL	src/lib/webgl-utils.js	/^var setupWebGL = function(canvas, opt_attribs, opt_onError) {$/;"	f	function:WebGLUtils
+shade_l1	src/src/main.js	/^let shade_l1 = new Node(0, 1, 0, 0, 0, 0);$/;"	v
+shade_l2	src/src/main.js	/^let shade_l2 = new Node(0, 1, 0, 0, 0, 0);$/;"	v
+shade_l3	src/src/main.js	/^let shade_l3 = new Node(0, 1, 0, 0, 0, 0);$/;"	v
+shade_l4	src/src/main.js	/^let shade_l4 = new Node(0, 1, 0, 0, 0, 0);$/;"	v
+shade_l5	src/src/main.js	/^let shade_l5 = new Node(0, 1, 0, 0, 0, 0);$/;"	v
 sofa	src/src/main.js	/^let sofa = new Node(-50, 2, -30, 0, 20, 0);$/;"	v
 sofa_b_l_leg	src/src/main.js	/^let sofa_b_l_leg = new Node(-19, -2, -6.5, 0, 0, 0);$/;"	v
 sofa_b_r_leg	src/src/main.js	/^let sofa_b_r_leg = new Node(19, -2, -6.5, 0, 0, 0);$/;"	v

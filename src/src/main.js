@@ -205,6 +205,24 @@ let tv_stand_plate = new Node(0, -1, 0, 0, 0, 0);
 tv_stand_sup.add_child(tv_stand_plate);
 w_node.add_child(tv);
 
+let lamp = new Node(-65, 17, 30, 0, 0, 0);
+let lamp_stand = new Node(0, 4, 0, 0, 0, 0);
+lamp.add_child(lamp_stand);
+let lamp_light = new Node(0, 4, 0, 0, 0, 0);
+lamp_stand.add_child(lamp_light);
+let shade_l1 = new Node(0, 1, 0, 0, 0, 0);
+lamp_light.add_child(shade_l1);
+let shade_l2 = new Node(0, 1, 0, 0, 0, 0);
+shade_l1.add_child(shade_l2);
+let shade_l3 = new Node(0, 1, 0, 0, 0, 0);
+shade_l2.add_child(shade_l3);
+let shade_l4 = new Node(0, 1, 0, 0, 0, 0);
+shade_l3.add_child(shade_l4);
+let shade_l5 = new Node(0, 1, 0, 0, 0, 0);
+shade_l4.add_child(shade_l5);
+w_node.add_child(lamp);
+
+
 
 
 // Vertex shader program
@@ -275,7 +293,7 @@ function main() {
   var viewProjMatrix = new Matrix4();
   viewProjMatrix.setPerspective(50.0, canvas.width / canvas.height, 1.0, 1000.0);
   viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
-  //viewProjMatrix.rotate(-100, 0, 1, 0);
+  //viewProjMatrix.rotate(90, 0, 1, 0);
 
   // Register the event handler to be called on key press
   document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
@@ -309,6 +327,8 @@ function main() {
   draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
   draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+
+  draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 
 
 
@@ -474,8 +494,44 @@ function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
   tv_t_bezel.setDraw(tv_top_bezel);
   tv_stand_sup.setDraw(tv_support);
   tv_stand_plate.setDraw(tv_plate);
+}
 
 
+function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix){
+  let lamp_base = () => {
+    drawBox(gl, n, 4, 4, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let lamp_stand_draw = () => {
+    drawBox(gl, n, 1, 4, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let lamp_light_draw = () => {
+    drawBox(gl, n, 4, 1, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let shade_l1_draw = () => {
+    drawBox(gl, n, 5, 1, 5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let shade_l2_draw = () => {
+    drawBox(gl, n, 4, 1, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let shade_l3_draw = () => {
+    drawBox(gl, n, 3, 1, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let shade_l4_draw = () => {
+    drawBox(gl, n, 2, 1, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+  let shade_l5_draw = () => {
+    drawBox(gl, n, 1, 1, 1, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
+  };
+
+  
+  lamp.setDraw(lamp_base);
+  lamp_stand.setDraw(lamp_stand_draw);
+  lamp_light.setDraw(lamp_light_draw);
+  shade_l1.setDraw(shade_l1_draw);
+  shade_l2.setDraw(shade_l2_draw);
+  shade_l3.setDraw(shade_l3_draw);
+  shade_l4.setDraw(shade_l4_draw);
+  shade_l5.setDraw(shade_l5_draw);
 
 
 }
