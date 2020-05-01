@@ -818,33 +818,41 @@ cei_r_plate	src/src/main.js	/^let cei_r_plate = new Node(2.25, -8, 0, 0, 0, 0);$
 cei_t_plate	src/src/main.js	/^let cei_t_plate = new Node(0, -0.5, 0, 0, 0, 0);$/;"	v
 cei_t_stalk	src/src/main.js	/^let cei_t_stalk = new Node(0, -4, 0, 0, 0, 0);$/;"	v
 chair1	src/src/main.js	/^let chair1 = new Node(11, 7.5, -10,0,0,0);$/;"	v
+chair1_anim	src/src/main.js	/^var chair1_anim = false;$/;"	v
 chair1_b_l_leg	src/src/main.js	/^let chair1_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair1_b_r_leg	src/src/main.js	/^let chair1_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair1_back	src/src/main.js	/^let chair1_back = new Node(4.5, 5, 0, 0, 0, 0);$/;"	v
+chair1_but	src/src/index.html	/^    <button type="button" id="chair1_but">Chair 1<\/button>$/;"	I
 chair1_f_l_leg	src/src/main.js	/^let chair1_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);$/;"	v
 chair1_f_r_leg	src/src/main.js	/^let chair1_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);$/;"	v
 chair1_l_post	src/src/main.js	/^let chair1_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);$/;"	v
 chair1_r_post	src/src/main.js	/^let chair1_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);$/;"	v
 chair2	src/src/main.js	/^let chair2 = new Node(-11, 7.5, -10,0,10,0);$/;"	v
+chair2_anim	src/src/main.js	/^var chair2_anim = false;$/;"	v
 chair2_b_l_leg	src/src/main.js	/^let chair2_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair2_b_r_leg	src/src/main.js	/^let chair2_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair2_back	src/src/main.js	/^let chair2_back = new Node(4.5, 5, 0, 0, 0, 0);$/;"	v
+chair2_but	src/src/index.html	/^    <button type="button" id="chair2_but">Chair 2<\/button>$/;"	I
 chair2_f_l_leg	src/src/main.js	/^let chair2_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);$/;"	v
 chair2_f_r_leg	src/src/main.js	/^let chair2_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);$/;"	v
 chair2_l_post	src/src/main.js	/^let chair2_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);$/;"	v
 chair2_r_post	src/src/main.js	/^let chair2_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);$/;"	v
 chair3	src/src/main.js	/^let chair3 = new Node(15, 7.5, 10,0,180,0);$/;"	v
+chair3_anim	src/src/main.js	/^var chair3_anim = false;$/;"	v
 chair3_b_l_leg	src/src/main.js	/^let chair3_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair3_b_r_leg	src/src/main.js	/^let chair3_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair3_back	src/src/main.js	/^let chair3_back = new Node(4.5, 5, 0, 0, 0, 0);$/;"	v
+chair3_but	src/src/index.html	/^    <button type="button" id="chair3_but">Chair 3<\/button>$/;"	I
 chair3_f_l_leg	src/src/main.js	/^let chair3_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);$/;"	v
 chair3_f_r_leg	src/src/main.js	/^let chair3_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);$/;"	v
 chair3_l_post	src/src/main.js	/^let chair3_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);$/;"	v
 chair3_r_post	src/src/main.js	/^let chair3_r_post = new Node(4.5, 2, -4.5, 0, 0, 0);$/;"	v
 chair4	src/src/main.js	/^let chair4 = new Node(-10, 7.5, 10,0,190,0);$/;"	v
+chair4_anim	src/src/main.js	/^var chair4_anim = false;$/;"	v
 chair4_b_l_leg	src/src/main.js	/^let chair4_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair4_b_r_leg	src/src/main.js	/^let chair4_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);$/;"	v
 chair4_back	src/src/main.js	/^let chair4_back = new Node(4.5, 5, 0, 0, 0, 0);$/;"	v
+chair4_but	src/src/index.html	/^    <button type="button" id="chair4_but">Chair 4<\/button>$/;"	I
 chair4_f_l_leg	src/src/main.js	/^let chair4_f_l_leg = new Node(-4.5, -7.5, 4.5, 0, 0 , 0);$/;"	v
 chair4_f_r_leg	src/src/main.js	/^let chair4_f_r_leg = new Node(4.5, -7.5, 4.5, 0, 0, 0);$/;"	v
 chair4_l_post	src/src/main.js	/^let chair4_l_post = new Node(-4.5, 2, -4.5, 0, 0, 0);$/;"	v
@@ -1023,7 +1031,10 @@ fan_l_attach	src/src/main.js	/^let fan_l_attach = new Node(-2, 1, 0, 0, 0, 0);$/
 fan_l_blade	src/src/main.js	/^let fan_l_blade = new Node(-5.5, 0.25, 0, 0, 0, 0);$/;"	v
 fan_r_attach	src/src/main.js	/^let fan_r_attach = new Node(2, 1, 0, 0, 0, 0);$/;"	v
 fan_r_blade	src/src/main.js	/^let fan_r_blade = new Node(5.5, 0.25, 0, 0, 0, 0);$/;"	v
+fan_slider	src/src/index.html	/^    <input type="range" min="0" max="10" value="3" id="fan_slider">$/;"	I
+fan_speed	src/src/main.js	/^var fan_speed = 3;$/;"	v
 fan_spinner	src/src/main.js	/^let fan_spinner = new Node(0, -1, 0, 0, 0, 0);$/;"	v
+fan_value	src/src/index.html	/^    <p id="fan_value"> Value: 3<\/p>$/;"	I
 floor	src/src/main.js	/^let floor = new Node(-15, 0, 0, 0, 0, 0);$/;"	v
 framebufferRenderbuffer	Chair Prac/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
 framebufferRenderbuffer	Prac 1/lib/webgl-debug.js	/^  'framebufferRenderbuffer': { 0:true, 1:true, 2:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts
@@ -1273,13 +1284,15 @@ isWebGLObject	Tex Mapping/lecture8-example/lib/webgl-debug.js	/^  function isWeb
 isWebGLObject	Tex Mapping/lib/webgl-debug.js	/^  function isWebGLObject(obj) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
 isWebGLObject	View Prac/lib/webgl-debug.js	/^  function isWebGLObject(obj) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
 isWebGLObject	src/lib/webgl-debug.js	/^  function isWebGLObject(obj) {$/;"	f	function:WebGLDebugUtils.makeLostContextSimulatingContext
+key_list	src/src/main.js	/^var key_list = {};$/;"	v
 keydown	Chair Prac/p3/chair.js	/^function keydown(ev, gl, u_ModelMatrix, u_NormalMatrix, u_isLighting) {$/;"	f
 keydown	Scene/lecture6-example/JointModel.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
 keydown	Scene/lecture6-example/MultiJointModel.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {$/;"	f
-keydown	src/src/main.js	/^function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {$/;"	f
 lamp	src/src/main.js	/^let lamp = new Node(-65, 17, 41.5, 0, 0, 0);$/;"	v
 lamp_light	src/src/main.js	/^let lamp_light = new Node(0, 4, 0, 0, 0, 0);$/;"	v
 lamp_stand	src/src/main.js	/^let lamp_stand = new Node(0, 4, 0, 0, 0, 0);$/;"	v
+lights	src/src/index.html	/^    <button type="button" id="lights">Light Switch<\/button>$/;"	I
+lights	src/src/main.js	/^var lights = true;$/;"	v
 loadFileAJAX	Chair Prac/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
 loadFileAJAX	Prac 1/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
 loadFileAJAX	Scene/lib/initShaders.js	/^    function loadFileAJAX(name) {$/;"	f
@@ -1408,7 +1421,8 @@ normalize	src/lib/cuon-matrix.js	/^Vector3.prototype.normalize = function() {$/;
 onkeydown	Chair Prac/p3/chair.js	/^  document.onkeydown = function(ev){$/;"	f	function:document
 onkeydown	Scene/lecture6-example/JointModel.js	/^  document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMat/;"	f	function:document
 onkeydown	Scene/lecture6-example/MultiJointModel.js	/^  document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMat/;"	f	function:document
-onkeydown	src/src/main.js	/^  document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMat/;"	f	function:document
+onkeydown	src/src/main.js	/^  document.onkeydown = function(ev){key_list[ev.keyCode] = true};$/;"	f	function:document
+onkeyup	src/src/main.js	/^  document.onkeyup = function(ev){key_list[ev.keyCode] = false};$/;"	f	function:document
 onload	Tex Mapping/lecture8-example/MultiTexture.js	/^  image0.onload = function(){ loadTexture(gl, n, texture0, u_Sampler0, image0, 0); };$/;"	f	function:image0
 onload	Tex Mapping/lecture8-example/MultiTexture.js	/^  image1.onload = function(){ loadTexture(gl, n, texture1, u_Sampler1, image1, 1); };$/;"	f	function:image1
 onload	Tex Mapping/lecture8-example/Tex.PointLightedCube_perFragment.js	/^  Cubetexture.image.onload = function(){ loadTexAndDraw(gl, n, Cubetexture, u_Sampler, u_UseText/;"	f	function:Cubetexture.image
@@ -1634,6 +1648,8 @@ t_r_drawer	src/src/main.js	/^let t_r_drawer = new Node(9.5, 7, 1.5, 0, 0, 0);$/;
 t_r_drawer_hndl	src/src/main.js	/^let t_r_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);$/;"	v
 table	src/src/main.js	/^let table = new Node(0, 0, 0, 0, 0, 0);$/;"	v
 table_base	src/src/main.js	/^let table_base = new Node(0, 0, 0, 0, 0, 0);$/;"	v
+table_end_1	src/src/index.html	/^    <button type="button" id="table_end_1">Table end 1<\/button>$/;"	I
+table_end_2	src/src/index.html	/^    <button type="button" id="table_end_2">Table end 2<\/button>$/;"	I
 table_l_panel	src/src/main.js	/^let table_l_panel = new Node(-10, 13, 0, 0, 0, 0);$/;"	v
 table_r_panel	src/src/main.js	/^let table_r_panel = new Node(10, 13, 0, 0, 0, 0);$/;"	v
 texImage2D	Chair Prac/lib/webgl-debug.js	/^  'texImage2D': { 0:true, 2:true, 6:true, 7:true },$/;"	c	class:WebGLDebugUtils.glValidEnumContexts

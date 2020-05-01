@@ -1,4 +1,37 @@
 // Node class for the scenegraph
+
+var key_list = {};
+var chair1_anim = false;
+var chair2_anim = false;
+var chair3_anim = false;
+var chair4_anim = false;
+var lights = true;
+var fan_speed = 3;
+
+
+document.getElementById('fan_slider').addEventListener('change', () => {
+  fan_speed = document.getElementById('fan_slider').valueAsNumber;
+  document.getElementById('fan_value').innerHTML = 'Value: ' + fan_speed;
+});
+
+document.getElementById('lights').addEventListener('click', () => {
+  lights = !lights;
+});
+
+document.getElementById('chair1_but').addEventListener('click', () => {
+  chair1_anim = !chair1_anim;
+});
+document.getElementById('chair2_but').addEventListener('click', () => {
+  chair2_anim = !chair2_anim;
+});
+document.getElementById('chair3_but').addEventListener('click', () => {
+  chair3_anim = !chair3_anim;
+});
+document.getElementById('chair4_but').addEventListener('click', () => {
+  chair4_anim = !chair4_anim;
+});
+
+
 class Node {
   constructor(x, y, z, x_rot, y_rot, z_rot) {
     this._x = x;
@@ -373,8 +406,9 @@ function main() {
   viewProjMatrix.lookAt(0.0, 50.0, 150.0, 0.0, 0.0, -125.0, 0.0, 1.0, 0.0);
   viewProjMatrix.rotate(-100, 0, 1, 0);
 
-  // Register the event handler to be called on key press
-  document.onkeydown = function(ev){ keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node); };
+  // handle keypresses
+  document.onkeydown = function(ev){key_list[ev.keyCode] = true};
+  document.onkeyup = function(ev){key_list[ev.keyCode] = false};
 
   table_l_panel.setDraw(() => {
     drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.79, 0.64, 0.44, 1, u_BoxColor);
@@ -414,10 +448,48 @@ function main() {
 　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
 
   window.setInterval(() => {
-    fan_spinner._y_rot = (fan_spinner._y_rot - 3) % 360;
+    fan_spinner._y_rot = (fan_spinner._y_rot - fan_speed) % 360;
+    if(key_list[65]){
+      viewProjMatrix.rotate(3,0,1,0);
+    }
+    if(key_list[68]){
+      viewProjMatrix.rotate(-3,0,1,0);
+    }
+    if(lights){
+      gl.uniform3f(u_LightColor, 0.98, 0.93, 0.64);
+    }else{
+      gl.uniform3f(u_LightColor, 0, 0, 0);
+    }
+    if(chair1_anim) {
+      if(chair1._z > -25) chair1._z -= 3;
+      if(chair1._y_rot > -45) chair1._y_rot -= 5;
+    }else{
+      if(chair1._z < -10) chair1._z += 3;
+      if(chair1._y_rot < 0) chair1._y_rot += 5;
+    }
+    if(chair2_anim) {
+      if(chair2._z > -20) chair2._z -= 3;
+      if(chair2._y_rot < 20) chair2._y_rot += 5;
+    }else{
+      if(chair2._z < -10) chair2._z += 3;
+      if(chair2._y_rot > 10) chair2._y_rot -= 5;
+    }
+    if(chair3_anim) {
+      if(chair3._z < 17) chair3._z += 3;
+      if(chair3._y_rot < 210) chair3._y_rot += 5;
+    }else{
+      if(chair3._z > 10) chair3._z -= 3;
+      if(chair3._y_rot > 180) chair3._y_rot -= 5;
+    }
+    if(chair4_anim) {
+      if(chair4._z < 18) chair4._z += 1;
+      if(chair4._y_rot > 180) chair4._y_rot -= 5;
+    }else{
+      if(chair4._z > 10) chair4._z -= 1;
+      if(chair4._y_rot < 190) chair4._y_rot += 5;
+    }
   　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
   }, 0.1)
-
 }
 
 
@@ -686,21 +758,6 @@ function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, 
   cei_b_plate.setDraw(cei_bf_plate);
   cei_f_plate.setDraw(cei_bf_plate);
 
-}
-
-
-function keydown(ev, gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
-  switch(ev.keyCode){
-    case 65:
-      viewProjMatrix.rotate(3,0,1,0);
-      break;
-    case 68:
-      viewProjMatrix.rotate(-3,0,1,0);
-      break;
-    default:
-      return;
-  }
-  draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node);
 }
 
 function initVertexBuffers(gl) {
