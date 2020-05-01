@@ -1,13 +1,23 @@
-// Node class for the scenegraph
-
+// set up key state list
 var key_list = {};
+// bools for animations
 var chair1_anim = false;
 var chair2_anim = false;
 var chair3_anim = false;
 var chair4_anim = false;
+var table1_anim = false;
+var table2_anim = false;
 var lights = true;
 var fan_speed = 3;
 
+// set up html inputs
+document.getElementById('table_end_1').addEventListener('click', () => {
+  table1_anim = !table1_anim;
+});
+
+document.getElementById('table_end_2').addEventListener('click', () => {
+  table2_anim = !table2_anim;
+});
 
 document.getElementById('fan_slider').addEventListener('change', () => {
   fan_speed = document.getElementById('fan_slider').valueAsNumber;
@@ -31,7 +41,9 @@ document.getElementById('chair4_but').addEventListener('click', () => {
   chair4_anim = !chair4_anim;
 });
 
-
+// Node class for scenegraph
+// all shapes are a node, each node may have a list of children
+// that inherit all transformations from their parent
 class Node {
   constructor(x, y, z, x_rot, y_rot, z_rot) {
     this._x = x;
@@ -40,6 +52,9 @@ class Node {
     this._x_rot = x_rot;
     this._y_rot = y_rot;
     this._z_rot = z_rot;
+    this._x_rot_pos = 0;
+    this._y_rot_pos = 0;
+    this._z_rot_pos = 0;
     // empty children array
     this._children = [];
     // default empty draw function
@@ -51,9 +66,11 @@ class Node {
   render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix) {
     pushMatrix(g_modelMatrix)
       g_modelMatrix.translate(this._x, this._y, this._z);
+      g_modelMatrix.translate(this._x_rot_pos, this._y_rot_pos, this._z_rot_pos);
       g_modelMatrix.rotate(this._x_rot, 1.0, 0.0, 0.0);
       g_modelMatrix.rotate(this._y_rot, 0.0, 1.0, 0.0);
       g_modelMatrix.rotate(this._z_rot, 0.0, 0.0, 1.0);
+      g_modelMatrix.translate(-this._x_rot_pos, -this._y_rot_pos, -this._z_rot_pos);
         pushMatrix(g_modelMatrix)
           this.draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
         g_modelMatrix = popMatrix();
@@ -75,12 +92,14 @@ class Node {
   }
 }
 
-
+// create root node of scenegraph
 let w_node = new Node(0, 0, 0, 0, 0, 0);
+// position of walls, floor, and ceiling
 let floor = new Node(-15, 0, 0, 0, 0, 0);
 let wall_1 = new Node(-60.5, 0, 0, 0, 0, 0);
 let wall_2 = new Node(0, 0, 50.5, 0, 0, 0);
 let roof = new Node(0, 68, 0, 0, 0, 0);
+// add nodes to relevant parent nodes
 floor.add_child(wall_1);
 floor.add_child(wall_2);
 floor.add_child(roof);
@@ -88,7 +107,7 @@ w_node.add_child(floor);
 
 
 
-
+// scenegraph for table
 let table = new Node(0, 0, 0, 0, 0, 0);
 w_node.add_child(table);
 let table_base = new Node(0, 0, 0, 0, 0, 0);
@@ -98,7 +117,7 @@ table_base.add_child(table_r_panel);
 let table_l_panel = new Node(-10, 13, 0, 0, 0, 0);
 table_base.add_child(table_l_panel);
 
-
+// scenegraphs for each chair
 let chair1 = new Node(11, 7.5, -10,0,0,0);
 let chair1_b_l_leg = new Node(-4.5, -7.5, -4.5, 0, 0, 0);
 let chair1_b_r_leg = new Node(4.5, -7.5, -4.5, 0, 0, 0);
@@ -174,7 +193,7 @@ chair4_l_post.add_child(chair4_back);
 w_node.add_child(chair4);
 
 
-
+// scenegraph for sofa
 let sofa = new Node(-50, 2, -30, 0, 20, 0);
 let sofa_b_l_leg = new Node(-19, -2, -6.5, 0, 0, 0);
 let sofa_b_r_leg = new Node(19, -2, -6.5, 0, 0, 0);
@@ -198,6 +217,7 @@ sofa.add_child(sofa_left_arm);
 sofa.add_child(sofa_right_arm);
 w_node.add_child(sofa);
 
+// scenegraph for drawers
 let drawers = new Node(-50, 2, 41.5, 0, 180, 0);
 let drawers_l_panel = new Node(-18.5, -2, 0, 0, 0, 0);
 let drawers_r_panel = new Node(18.5, -2, 0, 0, 0, 0);
@@ -227,7 +247,7 @@ b_r_drawer.add_child(b_r_drawer_hndl);
 drawers_f_panel.add_child(b_r_drawer);
 w_node.add_child(drawers);
 
-
+// scenegraph for TV
 let tv = new Node(-37,22,41.5,0,180,0);
 let tv_l_bezel = new Node(-10.5, 0, 0.25, 0, 0, 0);
 let tv_r_bezel = new Node(10.5, 0, 0.25, 0, 0, 0);
@@ -243,6 +263,7 @@ let tv_stand_plate = new Node(0, -1, 0, 0, 0, 0);
 tv_stand_sup.add_child(tv_stand_plate);
 w_node.add_child(tv);
 
+//scenegraph for lamp
 let lamp = new Node(-65, 17, 41.5, 0, 0, 0);
 let lamp_stand = new Node(0, 4, 0, 0, 0, 0);
 lamp.add_child(lamp_stand);
@@ -260,6 +281,7 @@ let shade_l5 = new Node(0, 1, 0, 0, 0, 0);
 shade_l4.add_child(shade_l5);
 w_node.add_child(lamp);
 
+// scenegraph for ceiling fan
 let fan = new Node(-50, 65, 0, 0, 0, 0);
 let fan_spinner = new Node(0, -1, 0, 0, 0, 0);
 fan.add_child(fan_spinner);
@@ -283,6 +305,7 @@ let fan_f_blade = new Node(0, 0.25, 5.5, 0, 0, 0);
 fan_f_attach.add_child(fan_f_blade);
 w_node.add_child(fan);
 
+// scenegraph for ceiling lamp
 let cei_lamp = new Node(0, 65, 0, 0, 0, 0);
 let cei_t_stalk = new Node(0, -4, 0, 0, 0, 0);
 cei_lamp.add_child(cei_t_stalk);
@@ -333,7 +356,7 @@ w_node.add_child(cei_lamp);
    'uniform vec3 u_AmbientLight;\n' +   // Ambient light color
    'varying vec3 v_Normal;\n' +
    'varying vec3 v_Position;\n' +
-   'uniform vec4 u_Color;\n' +
+   'uniform vec4 u_Color;\n' + // set color of fragment
    'uniform sampler2D u_Sampler;\n' +
    'void main() {\n' +
       // Normalize the normal because it is interpolated and not 1.0 in length any more
@@ -352,31 +375,32 @@ w_node.add_child(cei_lamp);
 
 
 function main() {
-  // Retrieve <canvas> element
+  // get canvas
   var canvas = document.getElementById('webgl');
 
-  // Get the rendering context for WebGL
+  // Get rendering context for WebGL
   var gl = getWebGLContext(canvas);
   if (!gl) {
     console.log('Failed to get the rendering context for WebGL');
     return;
   }
 
-  // Initialize shaders
+  // Init shaders
   if (!initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE)) {
-    console.log('Failed to intialize shaders.');
+    console.log('Failed to intialise shaders.');
     return;
   }
 
-  // Set the vertex information
+  // Init vertex buffer for cube primitive
   var n = initVertexBuffers(gl);
   if (n < 0) {
     console.log('Failed to set the vertex information');
     return;
   }
 
-  // Set the clear color and enable the depth test
+  // set clear colour
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
+  // enable non rendering of hidden vertices
   gl.enable(gl.DEPTH_TEST);
 
 // Get the storage locations of uniform variables
@@ -394,9 +418,9 @@ function main() {
   // set colour of point light hanging from ceiling
   gl.uniform3f(u_LightColor, 0.98, 0.93, 0.64);
   // set point light pos to a nice position
-  // this is not the position of the lamp model as the shadows caset from there look ugly
+  // this is not the position of the lamp model as the shadows cast from there look ugly
   gl.uniform3f(u_LightPosition, 2, 5, 2);
-  // Set the ambient light
+  // Set the ambient light colour
   gl.uniform3f(u_AmbientLight, 0.3, 0.3, 0.3);
   // set default colour
   gl.uniform4f(u_BoxColor, 1.0, 0.4,0.0,1.0);
@@ -410,6 +434,7 @@ function main() {
   document.onkeydown = function(ev){key_list[ev.keyCode] = true};
   document.onkeyup = function(ev){key_list[ev.keyCode] = false};
 
+  // draw instructions for table components
   table_l_panel.setDraw(() => {
     drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.79, 0.64, 0.44, 1, u_BoxColor);
   });
@@ -421,6 +446,7 @@ function main() {
     drawBox(gl, n, 15, 2, 20, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.79, 0.64, 0.44, 1, u_BoxColor);
   });
 
+  // create draw instructions for furniture
   draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.15, 0.10, 0.05, 1, u_BoxColor);
   draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.57, 0.13, 0.1, 1, u_BoxColor);
   draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.58, 0.47, 0.28, 1, u_BoxColor);
@@ -430,7 +456,7 @@ function main() {
   draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 1, 1, 1, 1, u_BoxColor);
   
 
-
+  // draw instructions for exterior walls
   floor.setDraw(() => {
     drawBox(gl, n, 120, -1, 100, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, 0.44, 0.5, 0.56, 1, u_BoxColor);
   });
@@ -447,6 +473,7 @@ function main() {
   //This is where we render world
 　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
 
+  // render and animation loop set on 0.1s timer
   window.setInterval(() => {
     fan_spinner._y_rot = (fan_spinner._y_rot - fan_speed) % 360;
     if(key_list[65]){
@@ -488,11 +515,42 @@ function main() {
       if(chair4._z > 10) chair4._z -= 1;
       if(chair4._y_rot < 190) chair4._y_rot += 5;
     }
+    if(table1_anim){
+      if(chair1_anim&&chair3_anim){
+        if(table_r_panel._z_rot > -90){
+          table_r_panel._x_rot_pos = -7.5;
+          table_r_panel._z_rot -= 3;
+        }
+      }
+    }else{
+      if(chair1_anim&&chair3_anim){
+        if(table_r_panel._z_rot < 0){
+          table_r_panel._x_rot_pos = -7.5;
+          table_r_panel._z_rot += 3;
+        }
+      }
+    }
+    if(table2_anim){
+      if(chair2_anim&&chair4_anim){
+        if(table_l_panel._z_rot < 90){
+          table_l_panel._x_rot_pos = 7.5;
+          table_l_panel._z_rot += 3;
+        }
+      }
+    }else{
+      if(chair2_anim&&chair4_anim){
+        if(table_l_panel._z_rot > 0){
+          table_l_panel._x_rot_pos = 7.5;
+          table_l_panel._z_rot -= 3;
+        }
+      }
+    }
   　draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, w_node);
   }, 0.1)
 }
 
 
+// setup draw instructions for chair components
 function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor){
   let chair_base = () => {
     drawBox(gl, n, 10, 2, 10, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor);
@@ -548,6 +606,7 @@ function draw_chairs(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, gr
 }
 
 
+// setup draw instructions for sofa components
 function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor){
   let sofa_base = () => {
     drawBox(gl, n, 40, 6, 15, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor);
@@ -580,6 +639,7 @@ function draw_sofa(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, gree
 }
 
 
+// setup draw instructions for drawer components
 function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor){
   let drawers_base = () => {
     drawBox(gl, n, 35, 2, 13, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor);
@@ -620,6 +680,7 @@ function draw_drawers(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, g
 }
 
 
+// setup draw instructions for TV components
 function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor){
   let tv_screen = () =>{
     drawBox(gl, n, 20, 11.25, 1.5, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor);
@@ -650,6 +711,7 @@ function draw_tv(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green,
 }
 
 
+// setup draw instructions for lamp components
 function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor){
   let lamp_base = () => {
     drawBox(gl, n, 4, 4, 4, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor);
@@ -687,6 +749,7 @@ function draw_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, gree
   shade_l5.setDraw(shade_l5_draw);
 }
 
+// setup draw instructions for fan components
 function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor){
   let fan_fix_draw = () => {
     drawBox(gl, n, 2, 3, 2, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor);
@@ -725,6 +788,7 @@ function draw_fan(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green
 
 }
 
+// setup draw instructions for ceiling lamp components
 function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor){
   let cei_fix_draw = () => {
     drawBox(gl, n, 3, 2, 3, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor);
@@ -760,6 +824,7 @@ function draw_cei_lamp(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, 
 
 }
 
+ // init unit cube vertices (taken from practical examples)
 function initVertexBuffers(gl) {
   // Coordinates（Cube which length of one side is 1 with the origin on the center of the bottom)
   var vertices = new Float32Array([
@@ -810,6 +875,7 @@ function initVertexBuffers(gl) {
   return indices.length;
 }
 
+// init array buffer (from practicals)
 function initArrayBuffer(gl, attribute, data, type, num) {
   // Create a buffer object
   var buffer = gl.createBuffer();
@@ -838,12 +904,13 @@ function initArrayBuffer(gl, attribute, data, type, num) {
 var g_modelMatrix = new Matrix4(), g_mvpMatrix = new Matrix4();
 
 function draw(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, world_node) {
-  // Clear color and depth buffer
+  // clear screen
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
   // start rendering objects starting from root of scenegraph
   world_node.render(gl, n, viewProjMatrix, u_MvpMatrix, u_NormalMatrix);
 }
 
+// matrix push and pop (from practicals)
 var g_matrixStack = []; // Array for storing a matrix
 function pushMatrix(m) { // Store the specified matrix to the array
   var m2 = new Matrix4(m);
@@ -856,7 +923,7 @@ function popMatrix() { // Retrieve the matrix from the array
 
 var g_normalMatrix = new Matrix4();  // Coordinate transformation matrix for normals
 
-// Draw rectangular solid
+// drawBox (from practicals) with modifications
 function drawBox(gl, n, width, height, depth, viewProjMatrix, u_MvpMatrix, u_NormalMatrix, red, green, blue, alpha, u_BoxColor) {
     // set colour
     gl.uniform4f(u_BoxColor, red, green, blue, alpha);

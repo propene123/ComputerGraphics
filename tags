@@ -1647,6 +1647,8 @@ t_l_drawer_hndl	src/src/main.js	/^let t_l_drawer_hndl = new Node(0, 1.5, 0.75, 0
 t_r_drawer	src/src/main.js	/^let t_r_drawer = new Node(9.5, 7, 1.5, 0, 0, 0);$/;"	v
 t_r_drawer_hndl	src/src/main.js	/^let t_r_drawer_hndl = new Node(0, 1.5, 0.75, 0, 0, 0);$/;"	v
 table	src/src/main.js	/^let table = new Node(0, 0, 0, 0, 0, 0);$/;"	v
+table1_anim	src/src/main.js	/^var table1_anim = false;$/;"	v
+table2_anim	src/src/main.js	/^var table2_anim = false;$/;"	v
 table_base	src/src/main.js	/^let table_base = new Node(0, 0, 0, 0, 0, 0);$/;"	v
 table_end_1	src/src/index.html	/^    <button type="button" id="table_end_1">Table end 1<\/button>$/;"	I
 table_end_2	src/src/index.html	/^    <button type="button" id="table_end_2">Table end 2<\/button>$/;"	I
